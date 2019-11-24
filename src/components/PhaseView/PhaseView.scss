@@ -1,0 +1,24 @@
+$companyLogoWidth: 200px;
+$headerHeight: 100px;
+
+.header {
+  align-items: center;
+  display: flex;
+  height: $headerHeight;
+
+  .brand {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: $headerHeight;
+    width: $companyLogoWidth;
+
+    .brand-logo {
+      height: $headerHeight;
+    }
+  }
+
+  .route-header {
+    width: calc(100% - #{$companyLogoWidth} );
+  }
+}

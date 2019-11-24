@@ -1,10 +1,21 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
+import PhaseView from './components/PhaseView/PhaseView';
 
 function App() {
   return (
-    <Header></Header>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <PhaseView></PhaseView>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

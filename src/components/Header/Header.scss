@@ -19,6 +19,28 @@ $headerHeight: 100px;
   }
 
   .route-header {
-    width: calc(100% - #{$companyLogoWidth} );
+    font-size: 20px;
+    padding: 0px 20px;
+  }
+
+  .location-ctr {
+    align-items: center;
+    display: flex;
+    .location {
+      align-items: center;
+      border: 1px solid #2B3543;
+      border-radius: 3px;
+      color: #2B3543;
+      display: flex;
+      font-size: 12px;
+      font-weight: bold;
+      height: 45px;
+      justify-content: center;
+      width: 180px;
+      &.active {
+        border: 1px solid #73BBD4;
+        color: #73BBD4;
+      }
+    }
   }
 }

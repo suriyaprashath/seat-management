@@ -1,0 +1,146 @@
+{
+  "Coimbatore": {
+    "phases": [
+      {
+        "id": "Phase1",
+        "cubicles": [
+          {
+            "id": "CP1C1",
+            "seats": [
+              {
+                "id": "CP1C1S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C1S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C1S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C1S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              }
+            ]
+          },
+          {
+            "id": "CP1C2",
+            "seats": [
+              {
+                "id": "CP1C2S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C2S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C2S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C2S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              }
+            ]
+          },
+          {
+            "id": "CP1C3",
+            "seats": [
+              {
+                "id": "CP1C3S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C3S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C3S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP1C3S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
