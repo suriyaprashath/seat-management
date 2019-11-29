@@ -2,13 +2,16 @@
   "Coimbatore": {
     "phases": [
       {
-        "id": "Phase1",
+        "id": "CP1",
+        "name": "Phase 1",
         "cubicles": [
           {
             "id": "CP1C1",
+            "name": "C1",
             "seats": [
               {
                 "id": "CP1C1S1",
+                "name": "S1",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -19,6 +22,7 @@
               },
               {
                 "id": "CP1C1S2",
+                "name": "S2",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -29,6 +33,7 @@
               },
               {
                 "id": "CP1C1S3",
+                "name": "S3",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -39,6 +44,7 @@
               },
               {
                 "id": "CP1C1S4",
+                "name": "S4",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -51,9 +57,11 @@
           },
           {
             "id": "CP1C2",
+            "name": "C2",
             "seats": [
               {
                 "id": "CP1C2S1",
+                "name": "S1",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -64,6 +72,7 @@
               },
               {
                 "id": "CP1C2S2",
+                "name": "S2",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -74,6 +83,7 @@
               },
               {
                 "id": "CP1C2S3",
+                "name": "S3",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -84,6 +94,7 @@
               },
               {
                 "id": "CP1C2S4",
+                "name": "S4",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -96,9 +107,11 @@
           },
           {
             "id": "CP1C3",
+            "name": "C3",
             "seats": [
               {
                 "id": "CP1C3S1",
+                "name": "S1",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -109,6 +122,7 @@
               },
               {
                 "id": "CP1C3S2",
+                "name": "S2",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -119,6 +133,7 @@
               },
               {
                 "id": "CP1C3S3",
+                "name": "S3",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -129,6 +144,7 @@
               },
               {
                 "id": "CP1C3S4",
+                "name": "S4",
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
@@ -136,6 +152,154 @@
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "CP2",
+        "name": "Phase 2",
+        "cubicles": [
+          {
+            "id": "CP2C1",
+            "name": "C1",
+            "seats": [
+              {
+                "id": "CP2C1S1",
+                "name": "S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C1S2",
+                "name": "S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C1S3",
+                "name": "S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C1S4",
+                "name": "S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              }
+            ]
+          },
+          {
+            "id": "CP2C2",
+            "name": "C2",
+            "seats": [
+              {
+                "id": "CP2C2S1",
+                "name": "S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C2S2",
+                "name": "S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C2S3",
+                "name": "S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C2S4",
+                "name": "S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              }
+            ]
+          },
+          {
+            "id": "CP2C3",
+            "name": "C3",
+            "seats": [
+              {
+                "id": "CP2C3S1",
+                "name": "S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C3S2",
+                "name": "S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                }
+              },
+              {
+                "id": "CP2C3S3",
+                "name": "S3",
+                "telNo": 101,
+                "occupied": false,
+                "occupant": {}
+              },
+              {
+                "id": "CP2C3S4",
+                "name": "S4",
+                "telNo": 101,
+                "occupied": false,
+                "occupant": {}
               }
             ]
           }

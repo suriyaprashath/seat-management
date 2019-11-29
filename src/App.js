@@ -11,7 +11,9 @@ import * as actions from "./actions/actions";
 import seatData from './data/seats';
 
 export class App extends React.Component {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
+    
     this.props.actions.initializeSeatData(seatData);
   }
 
