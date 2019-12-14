@@ -1,0 +1,21 @@
+.sidebar {
+  height: 100%;
+  width: 100%;
+
+  .feature-list {
+    margin: 20px 0px;
+    .feature {
+      color: #c6d0dc;
+      font-size: 14px;
+      list-style: none;
+      .active {
+        color: #73bbd4;
+        font-weight: bold;
+      }
+      .link {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+}
