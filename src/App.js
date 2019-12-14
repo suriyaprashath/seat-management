@@ -7,6 +7,7 @@ import { bindActionCreators } from "redux";
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import PhaseView from "./components/PhaseView/PhaseView";
+import CubicleView from "./components/CubicleView/CubicleView";
 import * as actions from "./actions/actions";
 import seatData from './data/seats';
 
@@ -28,8 +29,9 @@ export class App extends React.Component {
           <div className="route-content">
             <Router>
               <Switch>
-                <Route path="/" component={PhaseView} />
+                <Route exact path="/" component={PhaseView} />
                 <Route path="/phaseview" component={PhaseView} />
+                <Route path="/cubicleview" component={CubicleView} />
               </Switch>
             </Router>
           </div>
