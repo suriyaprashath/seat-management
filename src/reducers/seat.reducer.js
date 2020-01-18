@@ -1,4 +1,5 @@
 import { INITIALIZE_SEAT_DATA } from "../actions/seat.action";
+import { UPDATE_SELECTED_PHASE } from "../actions/seat.action";
 
 const initialState = {
   selectedLocation: "",
@@ -31,6 +32,12 @@ export default (state = initialState, action) => {
         selectedCubicle,
         selectedSeat,
         seatInfo
+      };
+
+    case UPDATE_SELECTED_PHASE:
+      return {
+        ...state,
+        selectedPhase: action.phase
       };
 
     default:

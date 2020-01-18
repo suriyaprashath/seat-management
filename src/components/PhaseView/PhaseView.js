@@ -1,11 +1,35 @@
 import React from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Redirect, withRouter } from "react-router";
 
 import "./PhaseView.scss";
 import * as utils from "../../utils";
+import * as storeActions from "../../actions/actions";
 
 class PhaseView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      routeToCubicleView: false
+    };
+  }
+
+  routeToCubicleView = () => {
+    this.setState({
+      routeToCubicleView: true
+    });
+  };
+
+  setSelectedPhase = phase => {
+    this.props.actions.updateSelectedPhase(phase);
+  };
+
   render() {
+    if (this.state.routeToCubicleView) {
+      return <Redirect to="/cubicleview" />;
+    }
     return (
       <div className="phase-view">
         <div className="details-ctr">
@@ -33,6 +57,10 @@ class PhaseView extends React.Component {
                   <img
                     src="./assets/images/arrow-right.png"
                     alt="Show Phase Details"
+                    onClick={() => {
+                      this.setSelectedPhase(phase);
+                      this.routeToCubicleView();
+                    }}
                   />
                 </div>
               </div>
@@ -51,4 +79,13 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(PhaseView);
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(storeActions, dispatch)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withRouter(PhaseView));
