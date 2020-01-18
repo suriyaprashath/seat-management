@@ -9,33 +9,33 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import PhaseView from "./components/PhaseView/PhaseView";
 import CubicleView from "./components/CubicleView/CubicleView";
 import * as actions from "./actions/actions";
-import seatData from './data/seats';
+import seatData from "./data/seats";
 
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.props.actions.initializeSeatData(seatData);
   }
 
   render() {
     return (
       <>
-        <Header></Header>
-        <div className="page-body">
-          <div className="sidebar-ctr">
-            <Sidebar></Sidebar>
-          </div>
-          <div className="route-content">
-            <Router>
+        <Router>
+          <Header></Header>
+          <div className="page-body">
+            <div className="sidebar-ctr">
+              <Sidebar></Sidebar>
+            </div>
+            <div className="route-content">
               <Switch>
                 <Route exact path="/" component={PhaseView} />
                 <Route path="/phaseview" component={PhaseView} />
                 <Route path="/cubicleview" component={CubicleView} />
               </Switch>
-            </Router>
+            </div>
           </div>
-        </div>
+        </Router>
       </>
     );
   }
