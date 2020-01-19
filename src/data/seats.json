@@ -197,17 +197,6 @@
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 }
-              },
-              {
-                "id": "CP2C1S4",
-                "name": "S4",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "name": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                }
               }
             ]
           },
