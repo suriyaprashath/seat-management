@@ -1,9 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import "./CubicleView.scss";
+import * as storeActions from '../../actions/actions';
 
 class CubicleView extends React.Component {
+  unlinkOccupant = seat => {
+    seat.occupied = false;
+    seat.occupant = {};
+
+    this.props.actions.updateSeat(seat);
+  };
+
   render() {
     return (
       <div className="cubicle-view">
@@ -65,6 +74,9 @@ class CubicleView extends React.Component {
                                   className="unlink-icon"
                                   src="./assets/images/unlink.png"
                                   alt="Unlink"
+                                  onClick={() => {
+                                    this.unlinkOccupant(seat);
+                                  }}
                                 />
                               </div>
                             </div>
@@ -90,4 +102,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(CubicleView);
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(storeActions, dispatch)
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CubicleView);
