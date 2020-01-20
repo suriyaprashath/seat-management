@@ -1,4 +1,8 @@
 import { INITIALIZE_SEAT_DATA } from "../actions/seat.action";
+import { UPDATE_SELECTED_PHASE } from "../actions/seat.action";
+import { UPDATE_SEAT } from "../actions/seat.action";
+
+import { getDetailsForSeat } from "../utils/seatInfo.service";
 
 const initialState = {
   selectedLocation: "",
@@ -31,6 +35,25 @@ export default (state = initialState, action) => {
         selectedCubicle,
         selectedSeat,
         seatInfo
+      };
+
+    case UPDATE_SELECTED_PHASE:
+      return {
+        ...state,
+        selectedPhase: action.phase
+      };
+
+    case UPDATE_SEAT:
+      let [location, phaseIndex, cubicleIndex, seatIndex] = getDetailsForSeat(
+        state.seatInfo,
+        action.seat
+      );
+      state.seatInfo[location].phases[phaseIndex].cubicles[cubicleIndex].seats[
+        seatIndex
+      ] = action.seat;
+
+      return {
+        ...state
       };
 
     default:

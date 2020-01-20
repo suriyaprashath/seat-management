@@ -1,0 +1,129 @@
+$visualContainerWidth: 450px;
+.cubicle-view {
+  background-color: #0f1319;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 25px;
+
+  .details-ctr {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    padding-right: 30px;
+    width: calc(100% - #{$visualContainerWidth});
+  }
+
+  .visual-ctr {
+    background-color: #12171e;
+    border: 1px solid #191f27;
+    border-radius: 15px;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    min-width: 450px;
+  }
+
+  .cubicle-detail-ctr {
+    background-color: #191f27;
+    border-radius: 5px;
+    max-height: 100%;
+    overflow: auto;
+    width: 100%;
+    .cubicle {
+      min-width: 70px;
+    }
+    .seat {
+      min-width: 70px;
+      padding-left: 15px;
+    }
+    .name {
+      min-width: 250px;
+    }
+    .team {
+      min-width: 150px;
+    }
+    .unlink {
+      min-width: 50px;
+    }
+    .even-row {
+      background-color: #151a22;
+    }
+    .odd-row {
+      background-color: #191f27;
+    }
+    .cubicle-detail-hdr {
+      box-shadow: 0 2px 0 0 #232d3b;
+      color: #ffffff;
+      display: flex;
+      font-size: 12px;
+      padding: 15px;
+      position: relative;
+    }
+    .cubicle-detail-bdy {
+      height: calc(100% - 46px);
+      .cubicle-detail {
+        display: flex;
+        .cubicle {
+          align-items: flex-start;
+          color: #c6d0dc;
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          justify-content: center;
+          padding-left: 15px;
+          .cubicle-name {
+            padding-left: 5px;
+          }
+          .view-ctr {
+            align-items: center;
+            background-color: #2B3543;
+            border-radius: 3px;
+            cursor: pointer;
+            display: flex;
+            font-size: 10px;
+            margin-top: 10px;
+            padding: 5px;
+            .view-icon {
+              height: 12px;
+              padding-left: 10px;
+              width: 12px;
+            }
+          }
+        }
+        .seat-details-ctr {
+          color: #c6d0dc;
+          flex-grow: 1;
+          font-size: 12px;
+          .seat-detail {
+            align-items: center;
+            display: flex;
+            height: 40px;
+            .name {
+              align-items: center;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: space-between;
+              padding-right: 15px;
+              .edit-occupant {
+                cursor: pointer;
+                height: 16px;
+                width: 16px;
+              }
+            }
+            .unlink {
+              align-items: center;
+              display: flex;
+              .unlink-icon {
+                cursor: pointer;
+                height: 16px;
+                width: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

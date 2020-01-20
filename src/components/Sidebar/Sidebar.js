@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./Sidebar.scss";
 
@@ -17,16 +17,14 @@ export default class Sidebar extends React.Component {
       <div className="sidebar">
         <ul className="feature-list">
           <li className="feature">
-            <Router>
-              <Link
-                className={`link ${
-                  this.state.feature === "Seats" ? "active" : ""
-                }`}
-                to="/phaseview"
-              >
-                Seats
-              </Link>
-            </Router>
+            <Link
+              className={`link ${
+                this.state.feature === "Seats" ? "active" : ""
+              }`}
+              to="/phaseview"
+            >
+              Seats
+            </Link>
           </li>
         </ul>
       </div>
