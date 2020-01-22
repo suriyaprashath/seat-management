@@ -8,6 +8,7 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import PhaseView from "./components/PhaseView/PhaseView";
 import CubicleView from "./components/CubicleView/CubicleView";
+import SeatView from "./components/SeatView/SeatView";
 import * as actions from "./actions/actions";
 import seatData from "./data/seats";
 
@@ -32,6 +33,7 @@ export class App extends React.Component {
                 <Route exact path="/" component={PhaseView} />
                 <Route path="/phaseview" component={PhaseView} />
                 <Route path="/cubicleview" component={CubicleView} />
+                <Route path="/seatview" component={SeatView} />
               </Switch>
             </div>
           </div>

@@ -1,11 +1,30 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { Redirect } from "react-router";
 
 import "./CubicleView.scss";
-import * as storeActions from '../../actions/actions';
+import * as storeActions from "../../actions/actions";
 
 class CubicleView extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      routeToSeatView: false
+    };
+  }
+
+  routeToSeatView = () => {
+    this.setState({
+      routeToSeatView: true
+    });
+  };
+
+  setSelectedCubicle = (cubicle) => {
+    this.props.actions.updateSelectedCubicle(cubicle);
+  };
+
   unlinkOccupant = seat => {
     seat.occupied = false;
     seat.occupant = {};
@@ -14,6 +33,9 @@ class CubicleView extends React.Component {
   };
 
   render() {
+    if (this.state.routeToSeatView) {
+      return <Redirect to="/seatview" />;
+    }
     return (
       <div className="cubicle-view">
         <div className="details-ctr">
@@ -37,7 +59,13 @@ class CubicleView extends React.Component {
                     >
                       <div className="cubicle">
                         <span className="cubicle-name">{cubicle.name}</span>
-                        <div className="view-ctr">
+                        <div
+                          className="view-ctr"
+                          onClick={() => {
+                            this.setSelectedCubicle(cubicle);
+                            this.routeToSeatView();
+                          }}
+                        >
                           View
                           <img
                             className="view-icon"
@@ -105,7 +133,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     actions: bindActionCreators(storeActions, dispatch)
-  }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CubicleView);

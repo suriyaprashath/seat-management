@@ -16,7 +16,7 @@ export default class Header extends React.Component {
         <div className="brand">
           <img
             className="brand-logo"
-            src="assets/images/soliton_logo.jpg"
+            src="assets/images/soliton_logo.png"
             alt="Soliton"
           ></img>
         </div>

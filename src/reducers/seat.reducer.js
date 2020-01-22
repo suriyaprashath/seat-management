@@ -1,4 +1,5 @@
 import { INITIALIZE_SEAT_DATA } from "../actions/seat.action";
+import { UPDATE_SELECTED_CUBICLE } from "../actions/seat.action";
 import { UPDATE_SELECTED_PHASE } from "../actions/seat.action";
 import { UPDATE_SEAT } from "../actions/seat.action";
 
@@ -35,6 +36,12 @@ export default (state = initialState, action) => {
         selectedCubicle,
         selectedSeat,
         seatInfo
+      };
+
+    case UPDATE_SELECTED_CUBICLE:
+      return {
+        ...state,
+        selectedCubicle: action.cubicle
       };
 
     case UPDATE_SELECTED_PHASE:
