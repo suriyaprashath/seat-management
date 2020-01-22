@@ -14,7 +14,8 @@ $headerHeight: 100px;
     width: $companyLogoWidth;
 
     .brand-logo {
-      height: $headerHeight;
+      height: auto;
+      width: 100px;
     }
   }
 
