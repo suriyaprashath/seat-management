@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Redirect, withRouter } from "react-router";
+import { Redirect } from "react-router";
 
 import "./PhaseView.scss";
 import * as utils from "../../utils";
@@ -85,7 +85,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(PhaseView));
+export default connect(mapStateToProps, mapDispatchToProps)(PhaseView);
