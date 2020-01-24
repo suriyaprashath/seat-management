@@ -1,0 +1,209 @@
+import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import "./ModifyOccupant.scss";
+import * as storeActions from "../../actions/actions";
+
+class ModifyOccupant extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modifyOccupant: {
+        selectedLocation: this.props.seatData.selectedLocation,
+        selectedPhase: this.props.seatData.selectedPhase
+      },
+      targetSeatToModify: null
+    };
+  }
+
+  unlinkOccupant = seat => {
+    seat.occupied = false;
+    seat.occupant = {};
+
+    this.props.actions.updateSeat(seat);
+  };
+
+  updateModifyLocation = event => {
+    let selectedLocation = event.target.value;
+
+    this.setState(prevState => {
+      return {
+        modifyOccupant: {
+          ...prevState.modifyOccupant,
+          selectedLocation
+        }
+      };
+    });
+  };
+
+  updateModifyPhase = event => {
+    let phaseId = event.target.value;
+    let selectedPhase = this.props.seatInfo[
+      this.modifyOccupant.location
+    ].phases.find(phase => {
+      return phase.id === phaseId;
+    });
+
+    this.setState(prevState => {
+      return {
+        modifyOccupant: {
+          ...prevState.modifyOccupant,
+          selectedPhase
+        }
+      };
+    });
+  };
+
+  updateTargetSeatToModify = seat => {
+    this.setState({
+      targetSeatToModify: seat
+    });
+  };
+
+  render() {
+    return (
+      <div className="modify-occupant">
+        <div className="occupant-info-ctr">
+          <span className="occupant-photo"></span>
+          <span className="occupant-name">
+            {this.props.seatToEdit.occupant.name}
+          </span>
+        </div>
+        <div className="modify-options-ctr">
+          <div className="move-to">
+            <input type="radio" name="modify" id="move-to" value="move" />
+            <label htmlFor="move-to">Move To</label>
+          </div>
+          <div className="exchange">
+            <input type="radio" name="modify" id="exchange" value="exchange" />
+            <label htmlFor="exchange">Exchange Seats</label>
+          </div>
+          <div className="unlink">
+            <input type="radio" name="modify" id="unlink" value="unlink" />
+            <label htmlFor="unlink">Unlink</label>
+          </div>
+        </div>
+        <div className="hierarchy-ctr">
+          <select
+            className="select location-select"
+            onChange={this.updateModifyLocation}
+          >
+            {Object.keys(this.props.seatData.seatInfo).map(location => {
+              return (
+                <option value={location.id} key={location.id}>
+                  {location}
+                </option>
+              );
+            })}
+          </select>
+
+          <select
+            className="select phase-select"
+            onChange={this.updateModifyPhase}
+          >
+            {this.props.seatData.seatInfo[
+              this.state.modifyOccupant.selectedLocation
+            ].phases.map(phase => {
+              return (
+                <option value={phase.id} key={phase.id}>
+                  {phase.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div className="mo-detail-ctr">
+          <div className="tbl-hdr mo-detail-hdr">
+            <p class="select-seat"></p>
+            <p className="cubicle">Cubicle</p>
+            <p className="seat">Seat</p>
+            <p className="name">Name</p>
+            <p className="team">Team</p>
+          </div>
+          <div className="mo-detail-bdy">
+            {this.props.seatData.selectedPhase.cubicles.map(
+              (cubicle, cubicleIndex) => {
+                return (
+                  <div
+                    className={`mo-detail ${
+                      cubicleIndex % 2 === 0 ? "odd-row" : "even-row"
+                    }`}
+                    key={cubicle.id}
+                  >
+                    <div className="select-seat-ctr">
+                      {cubicle.seats.map((seat, seatIndex) => {
+                        return (
+                          <div
+                            className={`select-seat ${
+                              seatIndex % 2 === 0 ? "odd-row" : "even-row"
+                            }`}
+                            key={seat.id}
+                          >
+                            <input
+                              className="radio square input"
+                              type="radio"
+                              name="select-seat"
+                              id={`select-${seat.id}`}
+                              onChange={() => {
+                                this.updateTargetSeatToModify(seat);
+                              }}
+                            />
+                            <label
+                              className="radio square label"
+                              htmlFor={`select-${seat.id}`}
+                            />
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="cubicle">
+                      <span className="cubicle-name">{cubicle.name}</span>
+                    </div>
+                    <div className="seat-details-ctr">
+                      {cubicle.seats.map((seat, seatIndex) => {
+                        return (
+                          <div
+                            className={`seat-detail ${
+                              seatIndex % 2 === 0 ? "odd-row" : "even-row"
+                            }`}
+                            key={seat.id}
+                          >
+                            <span className="seat">{seat.name}</span>
+                            <div className="name">
+                              <span>
+                                {seat.occupant && seat.occupant.name
+                                  ? seat.occupant.name
+                                  : "-"}
+                              </span>
+                            </div>
+                            <span className="team"></span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              }
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    seatData: state.seatData
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(storeActions, dispatch)
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ModifyOccupant);

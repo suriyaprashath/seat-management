@@ -1,0 +1,33 @@
+.radio {
+  &.square {
+    &.input {
+      display: none;
+    }
+    &.label {
+      background-color: #0d1116;
+      border: 1px solid rgba(179, 191, 209, 0.25);
+      border-radius: 1px;
+      cursor: pointer;
+      display: inline-block;
+      height: 13px;
+      position: relative;
+      width: 13px;
+    }
+    &.input:checked {
+      & + .radio.square.label {
+        border: 1px solid #73bbd4;
+        &:after {
+          background-color: #73bbd4;
+          border-radius: 1px;
+          content: '';
+          display: block;
+          position: absolute;
+          height: 9px;
+          left: 2px;
+          top: 2px;
+          width: 9px;
+        }
+      }
+    }
+  }
+}

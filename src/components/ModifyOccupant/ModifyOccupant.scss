@@ -1,18 +1,10 @@
 $visualContainerWidth: 450px;
-.cubicle-view {
+.modify-occupant {
   background-color: #0f1319;
   border-radius: 8px;
   box-sizing: border-box;
   height: 100%;
   padding: 25px;
-
-  .details-ctr {
-    box-sizing: border-box;
-    float: left;
-    height: 100%;
-    padding-right: 30px;
-    width: calc(100% - #{$visualContainerWidth});
-  }
 
   .visual-ctr {
     background-color: #12171e;
@@ -22,31 +14,39 @@ $visualContainerWidth: 450px;
     box-sizing: border-box;
     float: left;
     height: 100%;
-    overflow: auto;
-    width: 450px;
+    min-width: 450px;
   }
 
-  .cubicle-detail-ctr {
+  .mo-detail-ctr {
     background-color: #191f27;
     border-radius: 5px;
     max-height: 100%;
     overflow: auto;
     width: 100%;
+    .select-seat {
+      min-width: 40px;
+      width: 40px;
+    }
     .cubicle {
-      min-width: 70px;
+      min-width: 60px;
+      width: 60px;
     }
     .seat {
-      min-width: 70px;
+      min-width: 50px;
+      width: 50px;
       padding-left: 15px;
     }
     .name {
-      min-width: 250px;
+      min-width: 110px;
+      width: 110px;
     }
     .team {
-      min-width: 150px;
+      min-width: 108px;
+      width: 108px;
     }
     .unlink {
       min-width: 50px;
+      width: 50px;
     }
     .even-row {
       background-color: #151a22;
@@ -54,7 +54,7 @@ $visualContainerWidth: 450px;
     .odd-row {
       background-color: #191f27;
     }
-    .cubicle-detail-hdr {
+    .mo-detail-hdr {
       box-shadow: 0 2px 0 0 #232d3b;
       color: #ffffff;
       display: flex;
@@ -62,10 +62,18 @@ $visualContainerWidth: 450px;
       padding: 15px;
       position: relative;
     }
-    .cubicle-detail-bdy {
+    .mo-detail-bdy {
       height: calc(100% - 46px);
-      .cubicle-detail {
+      .mo-detail {
         display: flex;
+        .select-seat-ctr {
+          .select-seat {
+            align-items: center;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+          }
+        }
         .cubicle {
           align-items: flex-start;
           color: #c6d0dc;
@@ -76,21 +84,6 @@ $visualContainerWidth: 450px;
           padding-left: 15px;
           .cubicle-name {
             padding-left: 5px;
-          }
-          .view-ctr {
-            align-items: center;
-            background-color: #2B3543;
-            border-radius: 3px;
-            cursor: pointer;
-            display: flex;
-            font-size: 10px;
-            margin-top: 10px;
-            padding: 5px;
-            .view-icon {
-              height: 12px;
-              padding-left: 10px;
-              width: 12px;
-            }
           }
         }
         .seat-details-ctr {
