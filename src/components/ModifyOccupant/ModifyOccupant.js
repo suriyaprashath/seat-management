@@ -18,6 +18,10 @@ class ModifyOccupant extends React.Component {
     };
   }
 
+  /**
+   * Remove occupant from a seat
+   * @param  {object} seat - seat object
+   */
   unlinkOccupant = seat => {
     seat.occupied = false;
     seat.occupant = {};
@@ -25,6 +29,9 @@ class ModifyOccupant extends React.Component {
     this.props.actions.updateSeat(seat);
   };
 
+  /**
+   * Set the target seat location
+   */
   updateModifyLocation = event => {
     let selectedLocation = event.target.value;
 
@@ -38,6 +45,9 @@ class ModifyOccupant extends React.Component {
     });
   };
 
+  /**
+   * Set the target seat phase
+   */
   updateModifyPhase = event => {
     let phaseId = event.target.value;
     let selectedPhase = this.props.seatInfo[
@@ -73,16 +83,37 @@ class ModifyOccupant extends React.Component {
         </div>
         <div className="modify-options-ctr">
           <div className="move-to">
-            <input type="radio" name="modify" id="move-to" value="move" />
-            <label htmlFor="move-to">Move To</label>
+            <input
+              className="radio circle input"
+              type="radio"
+              name="modify"
+              id="move-to"
+              value="move"
+            />
+            <label className="radio circle label" htmlFor="move-to" />
+            <label className="radio circle value">Move To</label>
           </div>
           <div className="exchange">
-            <input type="radio" name="modify" id="exchange" value="exchange" />
-            <label htmlFor="exchange">Exchange Seats</label>
+            <input
+              className="radio circle input"
+              type="radio"
+              name="modify"
+              id="exchange"
+              value="exchange"
+            />
+            <label className="radio circle label" htmlFor="exchange" />
+            <label className="radio circle value">Exchange Seats</label>
           </div>
           <div className="unlink">
-            <input type="radio" name="modify" id="unlink" value="unlink" />
-            <label htmlFor="unlink">Unlink</label>
+            <input
+              className="radio circle input"
+              type="radio"
+              name="modify"
+              id="unlink"
+              value="unlink"
+            />
+            <label className="radio circle label" htmlFor="unlink" />
+            <label className="radio circle value">Unlink</label>
           </div>
         </div>
         <div className="hierarchy-ctr">
@@ -188,6 +219,10 @@ class ModifyOccupant extends React.Component {
               }
             )}
           </div>
+        </div>
+        <div className="actions-ctr">
+          <button className="btn danger">Cancel</button>
+          <button className="btn success">Confirm</button>
         </div>
       </div>
     );

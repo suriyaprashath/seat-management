@@ -1,4 +1,5 @@
-$visualContainerWidth: 450px;
+$scrollWidth: 17px;
+
 .modify-occupant {
   background-color: #0f1319;
   border-radius: 8px;
@@ -6,23 +7,47 @@ $visualContainerWidth: 450px;
   height: 100%;
   padding: 25px;
 
-  .visual-ctr {
-    background-color: #12171e;
-    border: 1px solid #191f27;
-    border-radius: 15px;
-    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
-    float: left;
-    height: 100%;
-    min-width: 450px;
+  .occupant-info-ctr {
+    align-items: center;
+    border-bottom: 1px solid #2b3543;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding-bottom: 30px;
+
+    .occupant-name {
+      color: #b3bfd1;
+      font-size: 16px;
+    }
+  }
+
+  .modify-options-ctr {
+    align-items: center;
+    display: flex;
+    padding: 30px 0px;
+    & > * {
+      align-items: center;
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  .hierarchy-ctr {
+    display: flex;
+    margin-bottom: 10px;
+    & > *:not(:last-child) {
+      margin-right: 20px;
+    }
   }
 
   .mo-detail-ctr {
     background-color: #191f27;
     border-radius: 5px;
-    max-height: 100%;
+    box-sizing: border-box;
+    height: calc(100% - 261px);
     overflow: auto;
-    width: 100%;
+    padding-right: $scrollWidth;
+    width: calc(100% + #{$scrollWidth});
     .select-seat {
       min-width: 40px;
       width: 40px;
@@ -118,6 +143,16 @@ $visualContainerWidth: 450px;
           }
         }
       }
+    }
+  }
+
+  .actions-ctr {
+    align-items: center;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    .btn.danger {
+      margin-right: 20px;
     }
   }
 }
