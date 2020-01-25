@@ -17,6 +17,21 @@ class ModifyOccupant extends React.Component {
       targetSeatToModify: null
     };
   }
+  /**
+   * Update Modify Section Location and reset the Phase on changing the location
+   */
+  onTargetLocationChange = event => {
+    let selectedLocation = event.target.value;
+    let phaseId = this.props.seatData.seatInfo[selectedLocation].phases[0].id;
+
+    this.updateModifyLocation(selectedLocation);
+    this.updateModifyPhase(phaseId, selectedLocation);
+  };
+
+  onTargetPhaseChange = event => {
+    let phaseId = event.target.value;
+    this.updateModifyPhase(phaseId, this.state.modifyOccupant.selectedLocation);
+  };
 
   /**
    * Remove occupant from a seat
@@ -32,9 +47,7 @@ class ModifyOccupant extends React.Component {
   /**
    * Set the target seat location
    */
-  updateModifyLocation = event => {
-    let selectedLocation = event.target.value;
-
+  updateModifyLocation = selectedLocation => {
     this.setState(prevState => {
       return {
         modifyOccupant: {
@@ -48,10 +61,9 @@ class ModifyOccupant extends React.Component {
   /**
    * Set the target seat phase
    */
-  updateModifyPhase = event => {
-    let phaseId = event.target.value;
+  updateModifyPhase = (phaseId, selectedLocation) => {
     let selectedPhase = this.props.seatData.seatInfo[
-      this.state.modifyOccupant.selectedLocation
+      selectedLocation
     ].phases.find(phase => {
       return phase.id === phaseId;
     });
@@ -119,11 +131,17 @@ class ModifyOccupant extends React.Component {
         <div className="hierarchy-ctr">
           <select
             className="select location-select"
-            onChange={this.updateModifyLocation}
+            onChange={this.onTargetLocationChange}
           >
             {Object.keys(this.props.seatData.seatInfo).map(location => {
               return (
-                <option value={location.id} key={location.id}>
+                <option
+                  value={location}
+                  key={location}
+                  selected={
+                    location === this.state.modifyOccupant.selectedLocation
+                  }
+                >
                   {location}
                 </option>
               );
@@ -132,7 +150,7 @@ class ModifyOccupant extends React.Component {
 
           <select
             className="select phase-select"
-            onChange={this.updateModifyPhase}
+            onChange={this.onTargetPhaseChange}
           >
             {this.props.seatData.seatInfo[
               this.state.modifyOccupant.selectedLocation
