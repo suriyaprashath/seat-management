@@ -50,8 +50,8 @@ class ModifyOccupant extends React.Component {
    */
   updateModifyPhase = event => {
     let phaseId = event.target.value;
-    let selectedPhase = this.props.seatInfo[
-      this.modifyOccupant.location
+    let selectedPhase = this.props.seatData.seatInfo[
+      this.state.modifyOccupant.selectedLocation
     ].phases.find(phase => {
       return phase.id === phaseId;
     });
@@ -147,14 +147,14 @@ class ModifyOccupant extends React.Component {
         </div>
         <div className="mo-detail-ctr">
           <div className="tbl-hdr mo-detail-hdr">
-            <p class="select-seat"></p>
+            <p className="select-seat"></p>
             <p className="cubicle">Cubicle</p>
             <p className="seat">Seat</p>
             <p className="name">Name</p>
             <p className="team">Team</p>
           </div>
           <div className="mo-detail-bdy">
-            {this.props.seatData.selectedPhase.cubicles.map(
+            {this.state.modifyOccupant.selectedPhase.cubicles.map(
               (cubicle, cubicleIndex) => {
                 return (
                   <div

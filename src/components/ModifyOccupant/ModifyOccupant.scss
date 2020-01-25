@@ -6,6 +6,7 @@ $scrollWidth: 17px;
   box-sizing: border-box;
   height: 100%;
   padding: 25px;
+  position: relative;
 
   .occupant-info-ctr {
     align-items: center;
@@ -46,7 +47,6 @@ $scrollWidth: 17px;
     box-sizing: border-box;
     height: calc(100% - 261px);
     overflow: auto;
-    padding-right: $scrollWidth;
     width: calc(100% + #{$scrollWidth});
     .select-seat {
       min-width: 40px;
@@ -148,9 +148,13 @@ $scrollWidth: 17px;
 
   .actions-ctr {
     align-items: center;
+    bottom: 0px;
     display: flex;
     height: 70px;
     justify-content: center;
+    left: 0px;
+    position: absolute;
+    width: 100%;
     .btn.danger {
       margin-right: 20px;
     }
