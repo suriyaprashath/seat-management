@@ -102,7 +102,7 @@ class CubicleView extends React.Component {
                               <span className="seat">{seat.name}</span>
                               <div className="name">
                                 <span>
-                                  {seat.occupant && seat.occupant.name
+                                  {seat.occupied
                                     ? seat.occupant.name
                                     : "-"}
                                 </span>
