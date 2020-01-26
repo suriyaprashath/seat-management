@@ -1,5 +1,6 @@
 {
   "Coimbatore": {
+    "id": "C",
     "phases": [
       {
         "id": "C-P1",
@@ -32,7 +33,7 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "name": "In",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -49,7 +50,7 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "name": "Wonderland",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -421,6 +422,239 @@
                 "telNo": 101,
                 "occupied": false,
                 "occupant": {},
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "Bangalore": {
+    "id": "B",
+    "phases": [
+      {
+        "id": "B-P1",
+        "name": "Phase 1",
+        "cubicles": [
+          {
+            "id": "B-P1-C1",
+            "name": "C1",
+            "seats": [
+              {
+                "id": "B-P1-C1-S1",
+                "name": "S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C1-S2",
+                "name": "S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C1-S3",
+                "name": "S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C1-S4",
+                "name": "S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              }
+            ]
+          },
+          {
+            "id": "B-P1-C2",
+            "name": "C2",
+            "seats": [
+              {
+                "id": "B-P1-C2-S1",
+                "name": "S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C2-S2",
+                "name": "S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C2-S3",
+                "name": "S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C2-S4",
+                "name": "S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              }
+            ]
+          },
+          {
+            "id": "B-P1-C3",
+            "name": "C3",
+            "seats": [
+              {
+                "id": "B-P1-C3-S1",
+                "name": "S1",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C3-S2",
+                "name": "S2",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C3-S3",
+                "name": "S3",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
+                "assets": {
+                  "cpu": 2,
+                  "monitor": 2,
+                  "lan": 101,
+                  "phone": 100
+                }
+              },
+              {
+                "id": "B-P1-C3-S4",
+                "name": "S4",
+                "telNo": 101,
+                "occupied": true,
+                "occupant": {
+                  "name": "Alex",
+                  "email": "alex@solitontech.com",
+                  "phone": 1234567890
+                },
                 "assets": {
                   "cpu": 2,
                   "monitor": 2,

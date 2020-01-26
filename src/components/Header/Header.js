@@ -1,8 +1,12 @@
 import React from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
 import "./Header.scss";
 import seatData from "../../data/seats.json";
+import * as storeActions from "../../actions/actions";
 
-export default class Header extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
 
@@ -10,6 +14,14 @@ export default class Header extends React.Component {
       location: "Coimbatore"
     };
   }
+
+  updateLocation = location => {
+    this.setState({
+      location
+    });
+    this.props.actions.updateSelectedLocation(location);
+  };
+
   render() {
     return (
       <div className="header">
@@ -28,7 +40,10 @@ export default class Header extends React.Component {
                 className={`location ${
                   this.state.location === location ? "active" : ""
                 }`}
-                key="location"
+                key={location}
+                onClick={() => {
+                  this.updateLocation(location);
+                }}
               >
                 {location}
               </div>
@@ -39,3 +54,17 @@ export default class Header extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    seatData: state.seatData
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    actions: bindActionCreators(storeActions, dispatch)
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

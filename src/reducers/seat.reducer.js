@@ -1,4 +1,5 @@
 import { INITIALIZE_SEAT_DATA } from "../actions/seat.action";
+import { UPDATE_SELECTED_LOCATION } from "../actions/seat.action";
 import { UPDATE_SELECTED_CUBICLE } from "../actions/seat.action";
 import { UPDATE_SELECTED_PHASE } from "../actions/seat.action";
 import { UPDATE_SEAT } from "../actions/seat.action";
@@ -14,10 +15,12 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
+  let selectedLocation;
+
   switch (action.type) {
     case INITIALIZE_SEAT_DATA:
       let seatInfo = action.data;
-      let selectedLocation = Object.keys(seatInfo)[0];
+      selectedLocation = Object.keys(seatInfo)[0];
       let selectedPhase =
         selectedLocation !== "" ? seatInfo[selectedLocation].phases[0] : {};
       let selectedCubicle =
@@ -36,6 +39,18 @@ export default (state = initialState, action) => {
         selectedCubicle,
         selectedSeat,
         seatInfo
+      };
+    // Update Location and reset the Phase on changing the Location
+    case UPDATE_SELECTED_LOCATION:
+      selectedLocation = action.location;
+
+      return {
+        ...state,
+        selectedLocation,
+        selectedPhase:
+          selectedLocation !== ""
+            ? state.seatInfo[selectedLocation].phases[0]
+            : {}
       };
 
     case UPDATE_SELECTED_CUBICLE:

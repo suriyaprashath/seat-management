@@ -5,15 +5,31 @@ import { Redirect } from "react-router";
 
 import "./CubicleView.scss";
 import * as storeActions from "../../actions/actions";
+import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
 
 class CubicleView extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      seatToEdit: null,
+      doEditOccupant: false,
       routeToSeatView: false
     };
   }
+
+  cancelEditOccupant = () => {
+    this.setState({
+      doEditOccupant: false
+    });
+  };
+
+  editOccupant = seat => {
+    this.setState({
+      seatToEdit: seat,
+      doEditOccupant: true
+    });
+  };
 
   routeToSeatView = () => {
     this.setState({
@@ -21,7 +37,7 @@ class CubicleView extends React.Component {
     });
   };
 
-  setSelectedCubicle = (cubicle) => {
+  setSelectedCubicle = cubicle => {
     this.props.actions.updateSelectedCubicle(cubicle);
   };
 
@@ -94,6 +110,9 @@ class CubicleView extends React.Component {
                                   className="edit-occupant"
                                   src="./assets/images/pencil.png"
                                   alt="Edit"
+                                  onClick={() => {
+                                    this.editOccupant(seat);
+                                  }}
                                 />
                               </div>
                               <span className="team"></span>
@@ -118,7 +137,14 @@ class CubicleView extends React.Component {
             </div>
           </div>
         </div>
-        <div className="visual-ctr"></div>
+        <div className="visual-ctr">
+          {this.state.doEditOccupant && (
+            <ModifyOccupant
+              seatToEdit={this.state.seatToEdit}
+              cancelEdit={this.cancelEditOccupant}
+            ></ModifyOccupant>
+          )}
+        </div>
       </div>
     );
   }

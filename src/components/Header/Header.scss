@@ -33,6 +33,7 @@ $headerHeight: 100px;
       border: 1px solid #2B3543;
       border-radius: 3px;
       color: #2B3543;
+      cursor: pointer;
       display: flex;
       font-size: 12px;
       font-weight: bold;
@@ -42,6 +43,9 @@ $headerHeight: 100px;
       &.active {
         border: 1px solid #73BBD4;
         color: #73BBD4;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
       }
     }
   }
