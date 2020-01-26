@@ -14,6 +14,7 @@ class ModifyOccupant extends React.Component {
         selectedLocation: this.props.seatData.selectedLocation,
         selectedPhase: this.props.seatData.selectedPhase
       },
+      modifyOption: "move",
       targetSeatToModify: null
     };
   }
@@ -31,6 +32,64 @@ class ModifyOccupant extends React.Component {
   onTargetPhaseChange = event => {
     let phaseId = event.target.value;
     this.updateModifyPhase(phaseId, this.state.modifyOccupant.selectedLocation);
+  };
+
+  onModifyOptionChange = event => {
+    let modifyOption = event.target.value;
+
+    this.setState({
+      modifyOption
+    });
+  };
+
+  performModify = (modifyOption, seatToEdit, targetSeat) => {
+    let tempSeat = {};
+
+    switch (modifyOption) {
+      case "move":
+        if (seatToEdit === targetSeat) {
+          return;
+        }
+        targetSeat.occupied = seatToEdit.occupied;
+        targetSeat.occupant = {
+          ...seatToEdit.occupant
+        };
+        seatToEdit.occupied = false;
+        seatToEdit.occupant = {};
+
+        this.props.actions.updateSeat(seatToEdit);
+        this.props.actions.updateSeat(targetSeat);
+        break;
+
+      case "exchange":
+        if (seatToEdit === targetSeat) {
+          return;
+        }
+        tempSeat.occupied = seatToEdit.occupied;
+        tempSeat.occupant = {
+          ...seatToEdit.occupant
+        };
+
+        seatToEdit.occupied = targetSeat.occupied;
+        seatToEdit.occupant = targetSeat.occupant;
+
+        targetSeat.occupied = tempSeat.occupied;
+        targetSeat.occupant = tempSeat.occupant;
+
+        this.props.actions.updateSeat(seatToEdit);
+        this.props.actions.updateSeat(targetSeat);
+        break;
+
+      case "unlink":
+        seatToEdit.occupied = false;
+        seatToEdit.occupant = {};
+
+        this.props.actions.updateSeat(seatToEdit);
+        break;
+
+      default:
+        console.warn("Choose a proper modify option");
+    }
   };
 
   /**
@@ -101,6 +160,8 @@ class ModifyOccupant extends React.Component {
               name="modify"
               id="move-to"
               value="move"
+              onChange={this.onModifyOptionChange}
+              checked={this.state.modifyOption === "move"}
             />
             <label className="radio circle label" htmlFor="move-to" />
             <label className="radio circle value">Move To</label>
@@ -112,6 +173,8 @@ class ModifyOccupant extends React.Component {
               name="modify"
               id="exchange"
               value="exchange"
+              onChange={this.onModifyOptionChange}
+              checked={this.state.modifyOption === "exchange"}
             />
             <label className="radio circle label" htmlFor="exchange" />
             <label className="radio circle value">Exchange Seats</label>
@@ -123,6 +186,8 @@ class ModifyOccupant extends React.Component {
               name="modify"
               id="unlink"
               value="unlink"
+              onChange={this.onModifyOptionChange}
+              checked={this.state.modifyOption === "unlink"}
             />
             <label className="radio circle label" htmlFor="unlink" />
             <label className="radio circle value">Unlink</label>
@@ -239,8 +304,26 @@ class ModifyOccupant extends React.Component {
           </div>
         </div>
         <div className="actions-ctr">
-          <button className="btn danger">Cancel</button>
-          <button className="btn success">Confirm</button>
+          <button className="btn danger" onClick={this.props.cancelEdit}>
+            Cancel
+          </button>
+          <button
+            className="btn success"
+            onClick={() => {
+              this.performModify(
+                this.state.modifyOption,
+                this.props.seatToEdit,
+                this.state.targetSeatToModify
+              );
+              this.props.cancelEdit();
+            }}
+            disabled={
+              !this.state.targetSeatToModify &&
+              this.state.modifyOption !== "unlink"
+            }
+          >
+            Confirm
+          </button>
         </div>
       </div>
     );

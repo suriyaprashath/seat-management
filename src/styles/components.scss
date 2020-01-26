@@ -76,6 +76,10 @@
   min-width: 100px;
   outline: none;
   padding: 5px 10px;
+  &:disabled {
+    background-color: #ccc !important;
+    cursor: no-drop;
+  }
   &.danger {
     background-color: #c36262;
   }

@@ -18,6 +18,12 @@ class CubicleView extends React.Component {
     };
   }
 
+  cancelEditOccupant = () => {
+    this.setState({
+      doEditOccupant: false
+    });
+  };
+
   editOccupant = seat => {
     this.setState({
       seatToEdit: seat,
@@ -133,7 +139,10 @@ class CubicleView extends React.Component {
         </div>
         <div className="visual-ctr">
           {this.state.doEditOccupant && (
-            <ModifyOccupant seatToEdit={this.state.seatToEdit}></ModifyOccupant>
+            <ModifyOccupant
+              seatToEdit={this.state.seatToEdit}
+              cancelEdit={this.cancelEditOccupant}
+            ></ModifyOccupant>
           )}
         </div>
       </div>

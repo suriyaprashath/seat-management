@@ -33,7 +33,7 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "name": "In",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -50,7 +50,7 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "name": "Wonderland",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
