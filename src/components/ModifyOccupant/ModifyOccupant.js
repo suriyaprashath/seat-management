@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 
 import "./ModifyOccupant.scss";
 import * as storeActions from "../../actions/actions";
+import { getFullNameFromObj } from "../../utils/utils";
 
 class ModifyOccupant extends React.Component {
   constructor(props) {
@@ -149,7 +150,7 @@ class ModifyOccupant extends React.Component {
         <div className="occupant-info-ctr">
           <span className="occupant-photo"></span>
           <span className="occupant-name">
-            {this.props.seatToEdit.occupant.name}
+            {getFullNameFromObj(this.props.seatToEdit.occupant)}
           </span>
         </div>
         <div className="modify-options-ctr">
@@ -287,8 +288,8 @@ class ModifyOccupant extends React.Component {
                             <span className="seat">{seat.name}</span>
                             <div className="name">
                               <span>
-                                {seat.occupant && seat.occupant.name
-                                  ? seat.occupant.name
+                                {seat.occupant && seat.occupant.firstName
+                                  ? getFullNameFromObj(seat.occupant)
                                   : "-"}
                               </span>
                             </div>

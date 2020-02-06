@@ -16,7 +16,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -33,7 +34,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "In",
+                  "firstName": "In",
+                  "lastName": "In",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -50,7 +52,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Wonderland",
+                  "firstName": "Wonderland",
+                  "lastName": "Wonderland",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -67,7 +70,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -90,7 +94,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -107,7 +112,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -124,7 +130,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -141,7 +148,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -164,7 +172,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -181,7 +190,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -198,7 +208,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -215,7 +226,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -244,7 +256,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -261,7 +274,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -278,7 +292,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -301,7 +316,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -318,7 +334,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -335,7 +352,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -352,7 +370,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -375,7 +394,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -392,7 +412,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -452,7 +473,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -469,7 +491,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -486,7 +509,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -503,7 +527,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -526,7 +551,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -543,7 +569,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -560,7 +587,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -577,7 +605,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -600,7 +629,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -617,7 +647,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -634,7 +665,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },
@@ -651,7 +683,8 @@
                 "telNo": 101,
                 "occupied": true,
                 "occupant": {
-                  "name": "Alex",
+                  "firstName": "Alex",
+                  "lastName": "Alex",
                   "email": "alex@solitontech.com",
                   "phone": 1234567890
                 },

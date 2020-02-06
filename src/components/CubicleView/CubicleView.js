@@ -7,6 +7,8 @@ import { firestoreConnect } from "react-redux-firebase";
 import "./CubicleView.scss";
 import * as storeActions from "../../actions/actions";
 import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
+import AddOccupant from "../AddOccupant/AddOccupant";
+import { getFullNameFromObj } from "../../utils/utils";
 
 const enhance = compose(
   firestoreConnect(() => ["people"]), // or { collection: 'people' }
@@ -22,11 +24,28 @@ class CubicleView extends React.Component {
     super(props);
 
     this.state = {
-      seatToEdit: null,
+      doAddOccupant: false,
       doEditOccupant: false,
-      routeToSeatView: false
+      routeToSeatView: false,
+      seatToEdit: null,
+      showRightPanel: false
     };
   }
+
+  addOccupant = seat => {
+    this.setState({
+      seatToEdit: seat,
+      doAddOccupant: true,
+      showRightPanel: true
+    });
+  };
+
+  closeAddOccupant = () => {
+    this.setState({
+      doAddOccupant: false,
+      showRightPanel: false
+    });
+  };
 
   cancelEditOccupant = () => {
     this.setState({
@@ -64,6 +83,17 @@ class CubicleView extends React.Component {
     }
     return (
       <div className="cubicle-view">
+        {/* Right Panel */}
+        <div className="right-panel" hidden={!this.state.showRightPanel}>
+          {this.state.doAddOccupant && (
+            <AddOccupant
+              seatToAdd={this.state.seatToEdit}
+              closeAdd={this.closeAddOccupant}
+              people={this.props.people}
+            ></AddOccupant>
+          )}
+        </div>
+
         <div className="details-ctr">
           <div className="cubicle-detail-ctr">
             <div className="tbl-hdr cubicle-detail-hdr">
@@ -113,17 +143,28 @@ class CubicleView extends React.Component {
                               <div className="name">
                                 <span>
                                   {seat.occupied
-                                    ? seat.occupant.name
+                                    ? getFullNameFromObj(seat.occupant)
                                     : "-"}
                                 </span>
-                                <img
-                                  className="edit-occupant"
-                                  src="./assets/images/pencil.png"
-                                  alt="Edit"
-                                  onClick={() => {
-                                    this.editOccupant(seat);
-                                  }}
-                                />
+                                {seat.occupied ? (
+                                  <img
+                                    className="action-icon edit-occupant-action"
+                                    src="./assets/images/pencil.png"
+                                    alt="Edit"
+                                    onClick={() => {
+                                      this.editOccupant(seat);
+                                    }}
+                                  />
+                                ) : (
+                                  <img
+                                    className="action-icon add-occupant-action"
+                                    src="./assets/images/add.svg"
+                                    alt="Add"
+                                    onClick={() => {
+                                      this.addOccupant(seat);
+                                    }}
+                                  />
+                                )}
                               </div>
                               <span className="team"></span>
                               <div className="unlink">

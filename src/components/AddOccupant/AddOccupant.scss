@@ -1,0 +1,120 @@
+$scrollWidth: 17px;
+
+.add-occupant {
+  background-color: #0f1319;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 0px 25px;
+  position: relative;
+
+  .add-occupant-header {
+    align-items: center;
+    display: flex;
+    height: 90px;
+    justify-content: space-between;
+    .close-panel-icon {
+      height: 15px;
+      width: 15px;
+    }
+    .header-info {
+      align-items: center;
+      display: flex;
+      .seat-path {
+        background-color: #2b3543;
+        border-radius: 8px;
+        color: #c6d0dc;
+        font-size: 18px;
+        margin-right: 15px;
+        padding: 15px;
+      }
+      .info-txt {
+        color: #c6d0dc;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .search-ctr {
+    align-items: center;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    .search-box {
+      align-items: center;
+      display: flex;
+      position: relative;
+      width: 250px;
+      .search-icon {
+        height: 18px;
+        left: 0px;
+        position: absolute;
+        width: 18px;
+      }
+      .search {
+        padding-left: 30px;
+      }
+    }
+  }
+
+  .occupant-list-ctr {
+    height: calc(100% - 210px);
+    overflow: auto;
+    padding-bottom: 15px;
+    width: calc(100% + 17px);
+    .select-occupant {
+      box-sizing: border-box;
+      width: 70px;
+    }
+    .name {
+      min-width: 250px;
+    }
+    .team {
+      min-width: 142px;
+    }
+    .occupant-list-hdr {
+      align-items: center;
+      background-color: #191f27;
+      box-shadow: 0 2px 0 0 #232d3b;
+      color: #B3BFD1;
+      display: flex;
+      font-family: Montserrat-Bold;
+      font-size: 12px;
+      height: 45px;
+    }
+    .occupant-list-bdy {
+      height: calc(100% - 45px);
+      overflow: auto;
+      .occupant-list {
+        align-items: center;
+        color: #C6D0DC;
+        display: flex;
+        font-size: 12px;
+        height: 40px;
+        &.even-row {
+          background-color: #191f27;
+        }
+        &.odd-row {
+          background-color: #151a22;
+        }
+        .select-occupant {
+          padding-left: 20px;
+        }
+      }
+    }
+  }
+
+  .actions-ctr {
+    align-items: center;
+    bottom: 0px;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    .btn.danger {
+      margin-right: 20px;
+    }
+  }
+}

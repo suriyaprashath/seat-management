@@ -99,3 +99,16 @@
   height:25px;
   outline: none;
 }
+
+// Text Box
+.text-box {
+  border: 0px;
+  height: 30px;
+  width: 100%;
+  &.dark {
+    border-bottom: 1px solid #2B3543;
+    background-color: transparent;
+    color: #C6D0DC;
+    outline: none;
+  }
+}
