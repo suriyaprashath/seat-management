@@ -1,11 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { bindActionCreators, compose } from "redux";
 import { Redirect } from "react-router";
+import { firestoreConnect } from "react-redux-firebase";
 
 import "./CubicleView.scss";
 import * as storeActions from "../../actions/actions";
 import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
+
+const enhance = compose(
+  firestoreConnect(() => ["people"]), // or { collection: 'people' }
+  connect(state => {
+    return {
+      people: state.firestore.data.people
+    };
+  })
+);
 
 class CubicleView extends React.Component {
   constructor(props) {
@@ -162,4 +172,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CubicleView);
+export default enhance(
+  connect(mapStateToProps, mapDispatchToProps)(CubicleView)
+);
