@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { Redirect } from "react-router";
 
 import "./PhaseView.scss";
-import * as utils from "../../utils";
+import * as utils from "../../utils/utils";
 import * as storeActions from "../../actions/actions";
 
 class PhaseView extends React.Component {

@@ -1,33 +1,66 @@
 import React from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { bindActionCreators, compose } from "redux";
 import { Redirect } from "react-router";
+import { firestoreConnect } from "react-redux-firebase";
 
 import "./CubicleView.scss";
 import * as storeActions from "../../actions/actions";
 import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
+import AddOccupant from "../AddOccupant/AddOccupant";
+import { getFullNameFromObj } from "../../utils/utils";
+
+const enhance = compose(
+  firestoreConnect(() => ["people"]), // or { collection: 'people' }
+  connect(state => {
+    return {
+      people: state.firestore.data.people
+    };
+  })
+);
 
 class CubicleView extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      doAddOccupant: false, // Right panel
+      doEditOccupant: false, // Right panel
+      routeToSeatView: false,
       seatToEdit: null,
-      doEditOccupant: false,
-      routeToSeatView: false
+      showRightPanel: false
     };
   }
 
+  addOccupant = seat => {
+    this.setState({
+      seatToEdit: seat,
+      doAddOccupant: true,
+      doEditOccupant: false,
+      showRightPanel: true
+    });
+  };
+
+  closeAddOccupant = () => {
+    this.setState({
+      doAddOccupant: false,
+      showRightPanel: false
+    });
+  };
+
   cancelEditOccupant = () => {
     this.setState({
-      doEditOccupant: false
+      doEditOccupant: false,
+      showRightPanel: false
     });
   };
 
   editOccupant = seat => {
     this.setState({
       seatToEdit: seat,
-      doEditOccupant: true
+      doAddOccupant: false,
+      doEditOccupant: true,
+      showRightPanel: true
     });
   };
 
@@ -54,6 +87,23 @@ class CubicleView extends React.Component {
     }
     return (
       <div className="cubicle-view">
+        {/* Right Panel */}
+        <div className="right-panel" hidden={!this.state.showRightPanel}>
+          {this.state.doAddOccupant && (
+            <AddOccupant
+              seatToAdd={this.state.seatToEdit}
+              closeAdd={this.closeAddOccupant}
+              people={this.props.people}
+            ></AddOccupant>
+          )}
+          {this.state.doEditOccupant && (
+            <ModifyOccupant
+              seatToEdit={this.state.seatToEdit}
+              cancelEdit={this.cancelEditOccupant}
+            ></ModifyOccupant>
+          )}
+        </div>
+
         <div className="details-ctr">
           <div className="cubicle-detail-ctr">
             <div className="tbl-hdr cubicle-detail-hdr">
@@ -102,18 +152,29 @@ class CubicleView extends React.Component {
                               <span className="seat">{seat.name}</span>
                               <div className="name">
                                 <span>
-                                  {seat.occupant && seat.occupant.name
-                                    ? seat.occupant.name
+                                  {seat.occupied
+                                    ? getFullNameFromObj(seat.occupant)
                                     : "-"}
                                 </span>
-                                <img
-                                  className="edit-occupant"
-                                  src="./assets/images/pencil.png"
-                                  alt="Edit"
-                                  onClick={() => {
-                                    this.editOccupant(seat);
-                                  }}
-                                />
+                                {seat.occupied ? (
+                                  <img
+                                    className="action-icon edit-occupant-action"
+                                    src="./assets/images/pencil.png"
+                                    alt="Edit"
+                                    onClick={() => {
+                                      this.editOccupant(seat);
+                                    }}
+                                  />
+                                ) : (
+                                  <img
+                                    className="action-icon add-occupant-action"
+                                    src="./assets/images/add.svg"
+                                    alt="Add"
+                                    onClick={() => {
+                                      this.addOccupant(seat);
+                                    }}
+                                  />
+                                )}
                               </div>
                               <span className="team"></span>
                               <div className="unlink">
@@ -137,14 +198,7 @@ class CubicleView extends React.Component {
             </div>
           </div>
         </div>
-        <div className="visual-ctr">
-          {this.state.doEditOccupant && (
-            <ModifyOccupant
-              seatToEdit={this.state.seatToEdit}
-              cancelEdit={this.cancelEditOccupant}
-            ></ModifyOccupant>
-          )}
-        </div>
+        <div className="visual-ctr"></div>
       </div>
     );
   }
@@ -162,4 +216,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CubicleView);
+export default enhance(
+  connect(mapStateToProps, mapDispatchToProps)(CubicleView)
+);

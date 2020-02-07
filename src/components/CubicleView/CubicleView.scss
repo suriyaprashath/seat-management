@@ -5,6 +5,7 @@ $visualContainerWidth: 450px;
   box-sizing: border-box;
   height: 100%;
   padding: 25px;
+  position: relative;
 
   .details-ctr {
     box-sizing: border-box;
@@ -107,7 +108,7 @@ $visualContainerWidth: 450px;
               display: flex;
               justify-content: space-between;
               padding-right: 15px;
-              .edit-occupant {
+              .action-icon {
                 cursor: pointer;
                 height: 16px;
                 width: 16px;
@@ -126,5 +127,16 @@ $visualContainerWidth: 450px;
         }
       }
     }
+  }
+
+  .right-panel {
+    background-color: #0F1319;
+    box-shadow: -3px 0 20px 10px #08080F;
+    bottom: 0px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 512px;
+    z-index: 10;
   }
 }

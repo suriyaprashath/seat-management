@@ -4,20 +4,64 @@ import { bindActionCreators } from "redux";
 
 import "./ModifyOccupant.scss";
 import * as storeActions from "../../actions/actions";
+import { getFullNameFromObj } from "../../utils/utils";
+import { getDetailsForSeat } from "../../utils/seatInfo.service";
 
 class ModifyOccupant extends React.Component {
   constructor(props) {
     super(props);
 
+    let [location, phase] = this.getSelectedLocationAndPhase(
+      this.props.seatData.seatInfo,
+      this.props.seatToEdit
+    );
+
     this.state = {
       modifyOccupant: {
-        selectedLocation: this.props.seatData.selectedLocation,
-        selectedPhase: this.props.seatData.selectedPhase
+        selectedLocation: location,
+        selectedPhase: phase
       },
       modifyOption: "move",
       targetSeatToModify: null
     };
   }
+
+  componentDidUpdate(prevProps) {
+    // Update the hierarchy fields automatically only if the seat to edit is changed
+    if (prevProps.seatToEdit !== this.props.seatToEdit) {
+      let [location, phase] = this.getSelectedLocationAndPhase(
+        this.props.seatData.seatInfo,
+        this.props.seatToEdit
+      );
+      let modifyOccupant = this.state.modifyOccupant;
+
+      if (
+        location !== modifyOccupant.selectedLocation ||
+        phase !== modifyOccupant.selectedPhase
+      ) {
+        this.setState({
+          modifyOccupant: {
+            ...modifyOccupant,
+            selectedLocation: location,
+            selectedPhase: phase
+          }
+        });
+      }
+    }
+  }
+
+  /**
+   * Returns the location and phase of a particular seat
+   * @param  {object} seatInfo - total seat data
+   * @param  {object} seat - a seat whose location and phase need to be derived
+   */
+  getSelectedLocationAndPhase = (seatInfo, seat) => {
+    let [location, phaseIndex] = getDetailsForSeat(seatInfo, seat);
+    let phase = this.props.seatData.seatInfo[location].phases[phaseIndex];
+
+    return [location, phase];
+  };
+
   /**
    * Update Modify Section Location and reset the Phase on changing the location
    */
@@ -149,7 +193,7 @@ class ModifyOccupant extends React.Component {
         <div className="occupant-info-ctr">
           <span className="occupant-photo"></span>
           <span className="occupant-name">
-            {this.props.seatToEdit.occupant.name}
+            {getFullNameFromObj(this.props.seatToEdit.occupant)}
           </span>
         </div>
         <div className="modify-options-ctr">
@@ -196,17 +240,12 @@ class ModifyOccupant extends React.Component {
         <div className="hierarchy-ctr">
           <select
             className="select location-select"
+            value={this.state.modifyOccupant.selectedLocation}
             onChange={this.onTargetLocationChange}
           >
             {Object.keys(this.props.seatData.seatInfo).map(location => {
               return (
-                <option
-                  value={location}
-                  key={location}
-                  selected={
-                    location === this.state.modifyOccupant.selectedLocation
-                  }
-                >
+                <option value={location} key={location}>
                   {location}
                 </option>
               );
@@ -215,6 +254,7 @@ class ModifyOccupant extends React.Component {
 
           <select
             className="select phase-select"
+            value={this.state.modifyOccupant.selectedPhase.id}
             onChange={this.onTargetPhaseChange}
           >
             {this.props.seatData.seatInfo[
@@ -287,8 +327,8 @@ class ModifyOccupant extends React.Component {
                             <span className="seat">{seat.name}</span>
                             <div className="name">
                               <span>
-                                {seat.occupant && seat.occupant.name
-                                  ? seat.occupant.name
+                                {seat.occupant && seat.occupant.firstName
+                                  ? getFullNameFromObj(seat.occupant)
                                   : "-"}
                               </span>
                             </div>

@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 
 import "./SeatView.scss";
 import * as storeActions from "../../actions/actions";
+import { getFullNameFromObj } from "../../utils/utils";
 
 class SeatView extends React.Component {
   unlinkOccupant = seat => {
@@ -36,7 +37,7 @@ class SeatView extends React.Component {
                             <div className="photo-hldr"></div>
                           </div>
                           <div className="occupant-name">
-                            {seat.occupant.name}
+                            {getFullNameFromObj(seat.occupant)}
                           </div>
                         </>
                       ) : (
