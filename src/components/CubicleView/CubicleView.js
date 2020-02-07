@@ -24,8 +24,8 @@ class CubicleView extends React.Component {
     super(props);
 
     this.state = {
-      doAddOccupant: false,
-      doEditOccupant: false,
+      doAddOccupant: false, // Right panel
+      doEditOccupant: false, // Right panel
       routeToSeatView: false,
       seatToEdit: null,
       showRightPanel: false
@@ -36,6 +36,7 @@ class CubicleView extends React.Component {
     this.setState({
       seatToEdit: seat,
       doAddOccupant: true,
+      doEditOccupant: false,
       showRightPanel: true
     });
   };
@@ -49,14 +50,17 @@ class CubicleView extends React.Component {
 
   cancelEditOccupant = () => {
     this.setState({
-      doEditOccupant: false
+      doEditOccupant: false,
+      showRightPanel: false
     });
   };
 
   editOccupant = seat => {
     this.setState({
       seatToEdit: seat,
-      doEditOccupant: true
+      doAddOccupant: false,
+      doEditOccupant: true,
+      showRightPanel: true
     });
   };
 
@@ -91,6 +95,12 @@ class CubicleView extends React.Component {
               closeAdd={this.closeAddOccupant}
               people={this.props.people}
             ></AddOccupant>
+          )}
+          {this.state.doEditOccupant && (
+            <ModifyOccupant
+              seatToEdit={this.state.seatToEdit}
+              cancelEdit={this.cancelEditOccupant}
+            ></ModifyOccupant>
           )}
         </div>
 
@@ -188,14 +198,7 @@ class CubicleView extends React.Component {
             </div>
           </div>
         </div>
-        <div className="visual-ctr">
-          {this.state.doEditOccupant && (
-            <ModifyOccupant
-              seatToEdit={this.state.seatToEdit}
-              cancelEdit={this.cancelEditOccupant}
-            ></ModifyOccupant>
-          )}
-        </div>
+        <div className="visual-ctr"></div>
       </div>
     );
   }
