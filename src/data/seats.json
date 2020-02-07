@@ -13,73 +13,49 @@
               {
                 "id": "C-P1-C1-S1",
                 "name": "S1",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C1-S2",
                 "name": "S2",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "In",
-                  "lastName": "In",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C1-S3",
                 "name": "S3",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Wonderland",
-                  "lastName": "Wonderland",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C1-S4",
                 "name": "S4",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               }
             ]
@@ -91,73 +67,49 @@
               {
                 "id": "C-P1-C2-S1",
                 "name": "S1",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C2-S2",
                 "name": "S2",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C2-S3",
                 "name": "S3",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C2-S4",
                 "name": "S4",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               }
             ]
@@ -169,73 +121,373 @@
               {
                 "id": "C-P1-C3-S1",
                 "name": "S1",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C3-S2",
                 "name": "S2",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C3-S3",
                 "name": "S3",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P1-C3-S4",
                 "name": "S4",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P1-C4",
+            "name": "C4",
+            "seats": [
+              {
+                "id": "C-P1-C4-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C4-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C4-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C4-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P1-C5",
+            "name": "C5",
+            "seats": [
+              {
+                "id": "C-P1-C5-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C5-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C5-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C5-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P1-C6",
+            "name": "C6",
+            "seats": [
+              {
+                "id": "C-P1-C6-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C6-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C6-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C6-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P1-C7",
+            "name": "C7",
+            "seats": [
+              {
+                "id": "C-P1-C7-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C7-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C7-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C7-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P1-C8",
+            "name": "C8",
+            "seats": [
+              {
+                "id": "C-P1-C8-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C8-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C8-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C8-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P1-C9",
+            "name": "C9",
+            "seats": [
+              {
+                "id": "C-P1-C9-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C9-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C9-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P1-C9-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               }
             ]
@@ -253,55 +505,97 @@
               {
                 "id": "C-P2-C1-S1",
                 "name": "S1",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C1-S2",
                 "name": "S2",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C1-S3",
                 "name": "S3",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C1-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C1-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C1-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C1-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C1-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               }
             ]
@@ -313,73 +607,97 @@
               {
                 "id": "C-P2-C2-S1",
                 "name": "S1",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C2-S2",
                 "name": "S2",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C2-S3",
                 "name": "S3",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C2-S4",
                 "name": "S4",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C2-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C2-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C2-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C2-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               }
             ]
@@ -391,63 +709,1153 @@
               {
                 "id": "C-P2-C3-S1",
                 "name": "S1",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C3-S2",
                 "name": "S2",
-                "telNo": 101,
-                "occupied": true,
-                "occupant": {
-                  "firstName": "Alex",
-                  "lastName": "Alex",
-                  "email": "alex@solitontech.com",
-                  "phone": 1234567890
-                },
+                "occupied": false,
+                "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C3-S3",
                 "name": "S3",
-                "telNo": 101,
                 "occupied": false,
                 "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               },
               {
                 "id": "C-P2-C3-S4",
                 "name": "S4",
-                "telNo": 101,
                 "occupied": false,
                 "occupant": {},
                 "assets": {
-                  "cpu": 2,
-                  "monitor": 2,
-                  "lan": 101,
-                  "phone": 100
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C3-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C3-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P2-C4",
+            "name": "C4",
+            "seats": [
+              {
+                "id": "C-P2-C4-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C4-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P2-C5",
+            "name": "C5",
+            "seats": [
+              {
+                "id": "C-P2-C5-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C5-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P2-C6",
+            "name": "C6",
+            "seats": [
+              {
+                "id": "C-P2-C6-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C6-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C6-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C6-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C6-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C6-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P2-C7",
+            "name": "C7",
+            "seats": [
+              {
+                "id": "C-P2-C7-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C7-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P2-C8",
+            "name": "C8",
+            "seats": [
+              {
+                "id": "C-P2-C8-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C8-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-P2-C9",
+            "name": "Lab",
+            "seats": [
+              {
+                "id": "C-P2-C9-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S5",
+                "name": "S5",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S6",
+                "name": "S6",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S7",
+                "name": "S7",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-P2-C9-S8",
+                "name": "S8",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "C-EMB",
+        "name": "Embassy",
+        "cubicles": [
+          {
+            "id": "C-EMB-C1",
+            "name": "C1",
+            "seats": [
+              {
+                "id": "C-EMB-C1-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C1-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C1-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C1-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C2",
+            "name": "C2",
+            "seats": [
+              {
+                "id": "C-EMB-C2-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C2-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C2-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C2-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C3",
+            "name": "C3",
+            "seats": [
+              {
+                "id": "C-EMB-C3-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C3-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C3-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C3-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C4",
+            "name": "C4",
+            "seats": [
+              {
+                "id": "C-EMB-C4-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C4-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C4-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C4-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C5",
+            "name": "C5",
+            "seats": [
+              {
+                "id": "C-EMB-C5-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C5-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C5-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C5-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C6",
+            "name": "C6",
+            "seats": [
+              {
+                "id": "C-EMB-C6-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C6-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C6-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C6-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C7",
+            "name": "C7",
+            "seats": [
+              {
+                "id": "C-EMB-C7-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C7-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C7-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C7-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C8",
+            "name": "C8",
+            "seats": [
+              {
+                "id": "C-EMB-C8-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C8-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C8-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C8-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              }
+            ]
+          },
+          {
+            "id": "C-EMB-C9",
+            "name": "C9",
+            "seats": [
+              {
+                "id": "C-EMB-C9-S1",
+                "name": "S1",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C9-S2",
+                "name": "S2",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C9-S3",
+                "name": "S3",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
+                }
+              },
+              {
+                "id": "C-EMB-C9-S4",
+                "name": "S4",
+                "occupied": false,
+                "occupant": {},
+                "assets": {
+                  "cpu": "",
+                  "monitor": "",
+                  "lan": "",
+                  "phone": ""
                 }
               }
             ]
@@ -470,7 +1878,6 @@
               {
                 "id": "B-P1-C1-S1",
                 "name": "S1",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -488,7 +1895,6 @@
               {
                 "id": "B-P1-C1-S2",
                 "name": "S2",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -506,7 +1912,6 @@
               {
                 "id": "B-P1-C1-S3",
                 "name": "S3",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -524,7 +1929,6 @@
               {
                 "id": "B-P1-C1-S4",
                 "name": "S4",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -548,7 +1952,6 @@
               {
                 "id": "B-P1-C2-S1",
                 "name": "S1",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -566,7 +1969,6 @@
               {
                 "id": "B-P1-C2-S2",
                 "name": "S2",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -584,7 +1986,6 @@
               {
                 "id": "B-P1-C2-S3",
                 "name": "S3",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -602,7 +2003,6 @@
               {
                 "id": "B-P1-C2-S4",
                 "name": "S4",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -626,7 +2026,6 @@
               {
                 "id": "B-P1-C3-S1",
                 "name": "S1",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -644,7 +2043,6 @@
               {
                 "id": "B-P1-C3-S2",
                 "name": "S2",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -662,7 +2060,6 @@
               {
                 "id": "B-P1-C3-S3",
                 "name": "S3",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
@@ -680,7 +2077,6 @@
               {
                 "id": "B-P1-C3-S4",
                 "name": "S4",
-                "telNo": 101,
                 "occupied": true,
                 "occupant": {
                   "firstName": "Alex",
