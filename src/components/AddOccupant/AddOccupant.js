@@ -12,6 +12,7 @@ class AddOccupant extends React.Component {
     super(props);
 
     this.state = {
+      filteredPeopleInfo: this.props.people,
       searchText: "",
       occupantToAdd: null
     };
@@ -25,10 +26,48 @@ class AddOccupant extends React.Component {
 
     this.props.actions.updateSeat(seat);
   };
+  /**
+   * Filters an Object using the filter string by comparing with the user
+   * defined parameters in the object
+   * @param  {string} filterValue - string used to filter the object
+   * @param  {object} infoToFilter - object in which filtering is done
+   * @param  {array} paramsList - parameters in object with which filter string
+   *  is compared with
+   */
+  filterInfo = (filterValue, infoToFilter, paramsList) => {
+    let filteredInfo = Object.keys(infoToFilter)
+      .filter(key => {
+        let value = infoToFilter[key];
+
+        return paramsList.reduce((acc, param) => {
+          let result;
+
+          if (value[param]) {
+            result = value[param].toLowerCase().includes(filterValue);
+          } else {
+            result = false;
+          }
+
+          return result || acc;
+        }, false);
+      })
+      .map(key => {
+        return infoToFilter[key];
+      });
+
+    return filteredInfo;
+  };
 
   updateSearchText = event => {
+    let searchValue = event.target.value;
+
     this.setState({
-      searchText: event.target.value
+      searchText: searchValue,
+      filteredPeopleInfo: this.filterInfo(searchValue, this.props.people, [
+        "firstName",
+        "lastName",
+        "team"
+      ])
     });
   };
 
@@ -77,35 +116,37 @@ class AddOccupant extends React.Component {
             <p className="team">Team</p>
           </div>
           <div className="occupant-list-bdy">
-            {Object.keys(this.props.people).map((peopleId, peopleIndex) => {
-              let people = this.props.people[peopleId];
-              return (
-                <div
-                  className={`occupant-list ${
-                    peopleIndex % 2 === 0 ? "odd-row" : "even-row"
-                  }`}
-                  key={peopleId}
-                >
-                  <div className="select-occupant">
-                    <input
-                      className="radio square input"
-                      type="radio"
-                      name="select-seat"
-                      id={`select-${peopleId}`}
-                      onChange={() => {
-                        this.updateOccupantToAdd(people);
-                      }}
-                    />
-                    <label
-                      className="radio square label"
-                      htmlFor={`select-${peopleId}`}
-                    />
+            {Object.keys(this.state.filteredPeopleInfo).map(
+              (peopleId, peopleIndex) => {
+                let people = this.state.filteredPeopleInfo[peopleId];
+                return (
+                  <div
+                    className={`occupant-list ${
+                      peopleIndex % 2 === 0 ? "odd-row" : "even-row"
+                    }`}
+                    key={peopleId}
+                  >
+                    <div className="select-occupant">
+                      <input
+                        className="radio square input"
+                        type="radio"
+                        name="select-seat"
+                        id={`select-${peopleId}`}
+                        onChange={() => {
+                          this.updateOccupantToAdd(people);
+                        }}
+                      />
+                      <label
+                        className="radio square label"
+                        htmlFor={`select-${peopleId}`}
+                      />
+                    </div>
+                    <div className="name">{getFullNameFromObj(people)}</div>
+                    <div className="team">{people.team}</div>
                   </div>
-                  <div className="name">{getFullNameFromObj(people)}</div>
-                  <div className="team">{people.team}</div>
-                </div>
-              );
-            })}
+                );
+              }
+            )}
           </div>
         </div>
         <div className="actions-ctr">
