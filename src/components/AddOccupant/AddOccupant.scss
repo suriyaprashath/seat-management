@@ -8,6 +8,18 @@ $scrollWidth: 17px;
   padding: 0px 25px;
   position: relative;
 
+  .loading-ctr {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: calc(100% - 160px);
+    .loader {
+      color: #B3BFD1;
+      font-size: 14px;
+      font-family: Montserrat-Bold;
+    }
+  }
+
   .add-occupant-header {
     align-items: center;
     display: flex;
@@ -75,7 +87,7 @@ $scrollWidth: 17px;
     .occupant-list-hdr {
       align-items: center;
       background-color: #191f27;
-      box-shadow: 0 2px 0 0 #232d3b;
+      border-bottom: 2px solid#232d3b;
       color: #B3BFD1;
       display: flex;
       font-family: Montserrat-Bold;
@@ -83,7 +95,7 @@ $scrollWidth: 17px;
       height: 45px;
     }
     .occupant-list-bdy {
-      height: calc(100% - 45px);
+      height: calc(100% - 47px);
       overflow: auto;
       .occupant-list {
         align-items: center;

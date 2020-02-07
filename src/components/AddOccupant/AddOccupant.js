@@ -12,10 +12,18 @@ class AddOccupant extends React.Component {
     super(props);
 
     this.state = {
-      filteredPeopleInfo: this.props.people,
+      filteredPeopleInfo: this.props.people || {},
       searchText: "",
       occupantToAdd: null
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.people && prevProps.people !== this.props.people) {
+      this.setState({
+        filteredPeopleInfo: this.props.people
+      });
+    }
   }
 
   addOccupantToSeat = (seat, occupant) => {
@@ -93,62 +101,70 @@ class AddOccupant extends React.Component {
             alt="close"
           />
         </div>
-        <div className="search-ctr">
-          <div className="search-box">
-            <img
-              className="search-icon"
-              src="/assets/images/search.svg"
-              alt="Search"
-            />
-            <input
-              className="search text-box dark"
-              type="text"
-              placeholder="Search Here"
-              value={this.state.searchText}
-              onChange={this.updateSearchText}
-            />
+        {Object.keys(this.state.filteredPeopleInfo).length === 0 ? (
+          <div className="loading-ctr">
+            <p className="loader">Fetching the contents ...</p>
           </div>
-        </div>
-        <div className="occupant-list-ctr">
-          <div className="occupant-list-hdr">
-            <p className="select-occupant"></p>
-            <p className="name">Name</p>
-            <p className="team">Team</p>
-          </div>
-          <div className="occupant-list-bdy">
-            {Object.keys(this.state.filteredPeopleInfo).map(
-              (peopleId, peopleIndex) => {
-                let people = this.state.filteredPeopleInfo[peopleId];
-                return (
-                  <div
-                    className={`occupant-list ${
-                      peopleIndex % 2 === 0 ? "odd-row" : "even-row"
-                    }`}
-                    key={peopleId}
-                  >
-                    <div className="select-occupant">
-                      <input
-                        className="radio square input"
-                        type="radio"
-                        name="select-seat"
-                        id={`select-${peopleId}`}
-                        onChange={() => {
-                          this.updateOccupantToAdd(people);
-                        }}
-                      />
-                      <label
-                        className="radio square label"
-                        htmlFor={`select-${peopleId}`}
-                      />
-                    </div>
-                    <div className="name">{getFullNameFromObj(people)}</div>
-                    <div className="team">{people.team}</div>
-                  </div>
-                );
-              }
-            )}
-          </div>
-        </div>
+        ) : (
+          <>
+            <div className="search-ctr">
+              <div className="search-box">
+                <img
+                  className="search-icon"
+                  src="/assets/images/search.svg"
+                  alt="Search"
+                />
+                <input
+                  className="search text-box dark"
+                  type="text"
+                  placeholder="Search Here"
+                  value={this.state.searchText}
+                  onChange={this.updateSearchText}
+                />
+              </div>
+            </div>
+            <div className="occupant-list-ctr">
+              <div className="occupant-list-hdr">
+                <p className="select-occupant"></p>
+                <p className="name">Name</p>
+                <p className="team">Team</p>
+              </div>
+              <div className="occupant-list-bdy">
+                {Object.keys(this.state.filteredPeopleInfo).map(
+                  (peopleId, peopleIndex) => {
+                    let people = this.state.filteredPeopleInfo[peopleId];
+                    return (
+                      <div
+                        className={`occupant-list ${
+                          peopleIndex % 2 === 0 ? "odd-row" : "even-row"
+                        }`}
+                        key={peopleId}
+                      >
+                        <div className="select-occupant">
+                          <input
+                            className="radio square input"
+                            type="radio"
+                            name="select-seat"
+                            id={`select-${peopleId}`}
+                            onChange={() => {
+                              this.updateOccupantToAdd(people);
+                            }}
+                          />
+                          <label
+                            className="radio square label"
+                            htmlFor={`select-${peopleId}`}
+                          />
+                        </div>
+                        <div className="name">{getFullNameFromObj(people)}</div>
+                        <div className="team">{people.team}</div>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+          </>
+        )}
         <div className="actions-ctr">
           <button className="btn danger" onClick={this.props.closeAdd}>
             Cancel
