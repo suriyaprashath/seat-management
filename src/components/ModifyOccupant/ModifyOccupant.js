@@ -26,24 +26,27 @@ class ModifyOccupant extends React.Component {
     };
   }
 
-  componentDidUpdate() {
-    let [location, phase] = this.getSelectedLocationAndPhase(
-      this.props.seatData.seatInfo,
-      this.props.seatToEdit
-    );
-    let modifyOccupant = this.state.modifyOccupant;
+  componentDidUpdate(prevProps) {
+    // Update the hierarchy fields automatically only if the seat to edit is changed
+    if (prevProps.seatToEdit !== this.props.seatToEdit) {
+      let [location, phase] = this.getSelectedLocationAndPhase(
+        this.props.seatData.seatInfo,
+        this.props.seatToEdit
+      );
+      let modifyOccupant = this.state.modifyOccupant;
 
-    if (
-      location !== modifyOccupant.selectedLocation ||
-      phase !== modifyOccupant.selectedPhase
-    ) {
-      this.setState({
-        modifyOccupant: {
-          ...modifyOccupant,
-          selectedLocation: location,
-          selectedPhase: phase
-        }
-      });
+      if (
+        location !== modifyOccupant.selectedLocation ||
+        phase !== modifyOccupant.selectedPhase
+      ) {
+        this.setState({
+          modifyOccupant: {
+            ...modifyOccupant,
+            selectedLocation: location,
+            selectedPhase: phase
+          }
+        });
+      }
     }
   }
 
