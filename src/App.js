@@ -32,7 +32,10 @@ export class App extends React.Component {
       Object.keys(this.props.seatData).length !== 0 &&
       prevProps.seatData !== this.props.seatData
     ) {
-      this.props.actions.initializeSeatData(this.props.seatData);
+      if (Object.keys(prevProps.seatData).length === 0) {
+        this.props.actions.initializeSeatData(this.props.seatData);
+      }
+      this.props.actions.updateSeatData(this.props.seatData);
     }
   }
 
