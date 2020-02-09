@@ -2,7 +2,8 @@ import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
+import { bindActionCreators, compose } from "redux";
+import { firestoreConnect } from "react-redux-firebase";
 
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -10,13 +11,29 @@ import PhaseView from "./components/PhaseView/PhaseView";
 import CubicleView from "./components/CubicleView/CubicleView";
 import SeatView from "./components/SeatView/SeatView";
 import * as actions from "./actions/actions";
-import seatData from "./data/seats";
 
+const enhance = compose(
+  firestoreConnect(() => ["seat"]),
+  connect(state => {
+    return {
+      seatData: state.firestore.data.seat || {}
+    };
+  })
+);
 export class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.actions.initializeSeatData(seatData);
+    this.props.actions.initializeSeatData(props.seatData);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      Object.keys(this.props.seatData).length !== 0 &&
+      prevProps.seatData !== this.props.seatData
+    ) {
+      this.props.actions.initializeSeatData(this.props.seatData);
+    }
   }
 
   render() {
@@ -49,4 +66,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(undefined, mapDispatchToProps)(App);
+export default enhance(connect(undefined, mapDispatchToProps)(App));
