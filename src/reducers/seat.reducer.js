@@ -20,7 +20,8 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case INITIALIZE_SEAT_DATA:
       let seatInfo = action.data;
-      selectedLocation = Object.keys(seatInfo)[0];
+      selectedLocation =
+        Object.keys(seatInfo).length !== 0 ? Object.keys(seatInfo)[0] : "";
       let selectedPhase =
         selectedLocation !== "" ? seatInfo[selectedLocation].phases[0] : {};
       let selectedCubicle =
