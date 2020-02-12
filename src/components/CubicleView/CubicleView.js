@@ -9,6 +9,7 @@ import * as storeActions from "../../actions/actions";
 import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
 import AddOccupant from "../AddOccupant/AddOccupant";
 import { getFullNameFromObj } from "../../utils/utils";
+import * as firestoreService from "../../utils/firestore.service";
 
 const enhance = compose(
   firestoreConnect(() => ["people"]), // or { collection: 'people' }
@@ -78,7 +79,7 @@ class CubicleView extends React.Component {
     seat.occupied = false;
     seat.occupant = {};
 
-    this.props.actions.updateSeat(seat);
+    firestoreService.updateSeat(this.props.seatData.seatInfo, seat);
   };
 
   render() {
