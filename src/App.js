@@ -2,8 +2,7 @@ import React from "react";
 import "./App.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { connect } from "react-redux";
-import { bindActionCreators, compose } from "redux";
-import { firestoreConnect } from "react-redux-firebase";
+import { bindActionCreators } from "redux";
 
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -11,20 +10,45 @@ import PhaseView from "./components/PhaseView/PhaseView";
 import CubicleView from "./components/CubicleView/CubicleView";
 import SeatView from "./components/SeatView/SeatView";
 import * as actions from "./actions/actions";
+import firebase from "./firebaseSetup";
+import { transformDataForApp } from "./utils/firestore.service";
 
-const enhance = compose(
-  firestoreConnect(() => ["seat"]),
-  connect(state => {
-    return {
-      seatData: state.firestore.data.seat || {}
-    };
-  })
-);
 export class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.props.actions.initializeSeatData(props.seatData);
+    let firestore = firebase.firestore();
+    let seatList = [];
+
+    this.docChangeListener = null;
+
+    firestore
+      .collection("seat")
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(queryDocumentSnapshot => {
+          seatList.push(queryDocumentSnapshot.data());
+        });
+        let seatInfo = transformDataForApp(seatList);
+
+        this.props.actions.initializeSeatData(seatInfo);
+
+        // this.docChangeListener = firestore.collection("seat").onSnapshot(
+        //   snapshot => {
+        //     snapshot.docChanges().forEach(change => {
+        //       if (change.type === "added") {
+        //         console.log("Added", change.doc.data());
+        //       }
+        //     });
+        //   },
+        //   error => {
+        //     console.error(
+        //       "Error in getting documents from seat collection",
+        //       error
+        //     );
+        //   }
+        // );
+      });
   }
 
   componentDidUpdate(prevProps) {
@@ -52,8 +76,8 @@ export class App extends React.Component {
               <Switch>
                 <Route exact path="/" component={PhaseView} />
                 <Route path="/phaseview" component={PhaseView} />
-                <Route path="/cubicleview" component={CubicleView} />
-                <Route path="/seatview" component={SeatView} />
+                {/* <Route path="/cubicleview" component={CubicleView} />
+                <Route path="/seatview" component={SeatView} /> */}
               </Switch>
             </div>
           </div>
@@ -69,4 +93,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default enhance(connect(undefined, mapDispatchToProps)(App));
+export default connect(undefined, mapDispatchToProps)(App);
