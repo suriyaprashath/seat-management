@@ -1,5 +1,4 @@
 import firebase from "../firebaseSetup";
-import { getDetailsForSeat } from "./seatInfo.service";
 
 const firestore = firebase.firestore();
 
