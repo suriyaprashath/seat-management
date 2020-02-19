@@ -79,7 +79,7 @@ class CubicleView extends React.Component {
     seat.occupied = false;
     seat.occupant = {};
 
-    firestoreService.updateSeat(this.props.seatData.seatInfo, seat);
+    firestoreService.updateSeat(seat);
   };
 
   render() {

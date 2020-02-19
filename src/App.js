@@ -12,6 +12,7 @@ import SeatView from "./components/SeatView/SeatView";
 import * as actions from "./actions/actions";
 import firebase from "./firebaseSetup";
 import { transformDataForApp } from "./utils/firestore.service";
+import { updateSeatInfo } from "./utils/seatInfo.service";
 
 export class App extends React.Component {
   constructor(props) {
@@ -19,48 +20,43 @@ export class App extends React.Component {
 
     let firestore = firebase.firestore();
     let seatList = [];
+    let initialQuerySnapshot = null;
+    let seatCollection = firestore.collection("seat");
 
     this.docChangeListener = null;
 
-    firestore
-      .collection("seat")
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(queryDocumentSnapshot => {
-          seatList.push(queryDocumentSnapshot.data());
-        });
-        let seatInfo = transformDataForApp(seatList);
-
-        this.props.actions.initializeSeatData(seatInfo);
-
-        // this.docChangeListener = firestore.collection("seat").onSnapshot(
-        //   snapshot => {
-        //     snapshot.docChanges().forEach(change => {
-        //       if (change.type === "added") {
-        //         console.log("Added", change.doc.data());
-        //       }
-        //     });
-        //   },
-        //   error => {
-        //     console.error(
-        //       "Error in getting documents from seat collection",
-        //       error
-        //     );
-        //   }
-        // );
+    seatCollection.get().then(querySnapshot => {
+      initialQuerySnapshot = querySnapshot;
+      querySnapshot.forEach(queryDocumentSnapshot => {
+        seatList.push(queryDocumentSnapshot.data());
       });
+      let seatInfo = transformDataForApp(seatList);
+
+      this.props.actions.initializeSeatData(seatInfo);
+    });
+
+    this.docChangeListener = seatCollection.onSnapshot(
+      snapshot => {
+        if (snapshot.isEqual(initialQuerySnapshot)) {
+          return;
+        }
+        snapshot.docChanges().forEach(change => {
+          let seat = change.doc.data();
+          if (change.type === "modified") {
+            let seatInfo = updateSeatInfo(this.props.seatData.seatInfo, seat);
+            this.props.actions.updateSeatData(seatInfo);
+          }
+        });
+      },
+      error => {
+        console.error("Error in getting documents from seat collection", error);
+      }
+    );
   }
 
-  componentDidUpdate(prevProps) {
-    if (
-      Object.keys(this.props.seatData).length !== 0 &&
-      prevProps.seatData !== this.props.seatData
-    ) {
-      if (Object.keys(prevProps.seatData).length === 0) {
-        this.props.actions.initializeSeatData(this.props.seatData);
-      }
-      this.props.actions.updateSeatData(this.props.seatData);
-    }
+  componentWillUnmount() {
+    // Remove listener for documents
+    this.docChangeListener();
   }
 
   render() {
@@ -76,8 +72,8 @@ export class App extends React.Component {
               <Switch>
                 <Route exact path="/" component={PhaseView} />
                 <Route path="/phaseview" component={PhaseView} />
-                {/* <Route path="/cubicleview" component={CubicleView} />
-                <Route path="/seatview" component={SeatView} /> */}
+                <Route path="/cubicleview" component={CubicleView} />
+                <Route path="/seatview" component={SeatView} />
               </Switch>
             </div>
           </div>
@@ -87,10 +83,16 @@ export class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    seatData: state.seatData
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     actions: bindActionCreators(actions, dispatch)
   };
 };
 
-export default connect(undefined, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

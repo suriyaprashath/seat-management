@@ -9,19 +9,18 @@ const firestore = firebase.firestore();
  * @param  {object} seat - seat to update
  * @return {promise} - resolves when the seat is updated
  */
-export const updateSeat = (seatInfo, seat) => {
-  let [location, phaseIndex, cubicleIndex, seatIndex] = getDetailsForSeat(
-    seatInfo,
-    seat
-  );
-  let phaseToEdit = seatInfo[location].phases;
-  phaseToEdit[phaseIndex].cubicles[cubicleIndex].seats[seatIndex] = seat;
-
+export const updateSeat = seat => {
   //TODO Handle no internet case
   return firestore
     .collection("seat")
-    .doc(location)
-    .update("phases", phaseToEdit);
+    .doc(seat.id)
+    .set(
+      {
+        occupant: seat.occupant,
+        occupied: seat.occupied
+      },
+      { merge: true }
+    );
 };
 
 export const transformDataForApp = seatList => {
@@ -70,24 +69,12 @@ export const transformDataForApp = seatList => {
     });
     // Construct seat object
     if (!appSeat) {
-      let filteredSeat = {};
-      Object.keys(seat)
-        .filter(seatKeys => {
-          return (
-            seatKeys !== "location" &&
-            seatKeys !== "phase" &&
-            seatKeys !== "cubicle"
-          );
-        })
-        .forEach(seatKeys => {
-          filteredSeat[seatKeys] = seat[seatKeys];
-        });
       cubicle.seats.push({
-        ...filteredSeat,
+        ...seat,
         cubicle
       });
     }
   });
-  
+
   return seatInfo;
 };

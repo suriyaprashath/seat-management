@@ -35,7 +35,7 @@ class AddOccupant extends React.Component {
       ...occupant
     };
 
-    firestoreService.updateSeat(this.props.seatData.seatInfo, seat);
+    firestoreService.updateSeat(seat);
   };
   /**
    * Filters an Object using the filter string by comparing with the user
