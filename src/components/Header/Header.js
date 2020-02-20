@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import "./Header.scss";
-import seatData from "../../data/seats.json";
 import * as storeActions from "../../actions/actions";
 
 class Header extends React.Component {
@@ -11,8 +10,19 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
-      location: "Coimbatore"
+      location: this.props.seatData.selectedLocation
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      Object.keys(this.props.seatData).length !== 0 &&
+      prevProps.seatData !== this.props.seatData
+    ) {
+      this.setState({
+        location: this.props.seatData.selectedLocation
+      });
+    }
   }
 
   updateLocation = location => {
@@ -34,7 +44,7 @@ class Header extends React.Component {
         </div>
         <div className="route-header">Seating Management</div>
         <div className="location-ctr">
-          {Object.keys(seatData).map(location => {
+          {Object.keys(this.props.seatData.seatInfo).map(location => {
             return (
               <div
                 className={`location ${

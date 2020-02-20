@@ -1,10 +1,8 @@
 import { INITIALIZE_SEAT_DATA } from "../actions/seat.action";
+import { UPDATE_SEAT_DATA } from "../actions/seat.action";
 import { UPDATE_SELECTED_LOCATION } from "../actions/seat.action";
 import { UPDATE_SELECTED_CUBICLE } from "../actions/seat.action";
 import { UPDATE_SELECTED_PHASE } from "../actions/seat.action";
-import { UPDATE_SEAT } from "../actions/seat.action";
-
-import { getDetailsForSeat } from "../utils/seatInfo.service";
 
 const initialState = {
   selectedLocation: "",
@@ -16,11 +14,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   let selectedLocation;
+  let seatInfo;
 
   switch (action.type) {
     case INITIALIZE_SEAT_DATA:
-      let seatInfo = action.data;
-      selectedLocation = Object.keys(seatInfo)[0];
+      seatInfo = action.data;
+      selectedLocation =
+        Object.keys(seatInfo).length !== 0 ? Object.keys(seatInfo)[0] : "";
       let selectedPhase =
         selectedLocation !== "" ? seatInfo[selectedLocation].phases[0] : {};
       let selectedCubicle =
@@ -38,6 +38,14 @@ export default (state = initialState, action) => {
         selectedPhase,
         selectedCubicle,
         selectedSeat,
+        seatInfo
+      };
+
+    case UPDATE_SEAT_DATA:
+      seatInfo = action.data;
+
+      return {
+        ...state,
         seatInfo
       };
     // Update Location and reset the Phase on changing the Location
@@ -63,19 +71,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         selectedPhase: action.phase
-      };
-
-    case UPDATE_SEAT:
-      let [location, phaseIndex, cubicleIndex, seatIndex] = getDetailsForSeat(
-        state.seatInfo,
-        action.seat
-      );
-      state.seatInfo[location].phases[phaseIndex].cubicles[cubicleIndex].seats[
-        seatIndex
-      ] = action.seat;
-
-      return {
-        ...state
       };
 
     default:

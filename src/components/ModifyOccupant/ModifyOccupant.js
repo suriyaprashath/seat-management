@@ -6,6 +6,7 @@ import "./ModifyOccupant.scss";
 import * as storeActions from "../../actions/actions";
 import { getFullNameFromObj } from "../../utils/utils";
 import { getDetailsForSeat } from "../../utils/seatInfo.service";
+import * as firestoreService from "../../utils/firestore.service";
 
 class ModifyOccupant extends React.Component {
   constructor(props) {
@@ -101,8 +102,9 @@ class ModifyOccupant extends React.Component {
         seatToEdit.occupied = false;
         seatToEdit.occupant = {};
 
-        this.props.actions.updateSeat(seatToEdit);
-        this.props.actions.updateSeat(targetSeat);
+        firestoreService.updateSeat(seatToEdit).then(() => {
+          firestoreService.updateSeat(targetSeat);
+        });
         break;
 
       case "exchange":
@@ -120,15 +122,16 @@ class ModifyOccupant extends React.Component {
         targetSeat.occupied = tempSeat.occupied;
         targetSeat.occupant = tempSeat.occupant;
 
-        this.props.actions.updateSeat(seatToEdit);
-        this.props.actions.updateSeat(targetSeat);
+        firestoreService.updateSeat(seatToEdit).then(() => {
+          firestoreService.updateSeat(targetSeat);
+        });
         break;
 
       case "unlink":
         seatToEdit.occupied = false;
         seatToEdit.occupant = {};
 
-        this.props.actions.updateSeat(seatToEdit);
+        firestoreService.updateSeat(seatToEdit);
         break;
 
       default:
@@ -144,7 +147,7 @@ class ModifyOccupant extends React.Component {
     seat.occupied = false;
     seat.occupant = {};
 
-    this.props.actions.updateSeat(seat);
+    firestoreService.updateSeat(seat);
   };
 
   /**

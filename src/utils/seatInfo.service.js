@@ -27,3 +27,29 @@ export const getSeatPath = (seatInfo, seat) => {
 
   return `${location}-${phase.name}-${cubicle.name}-${seat.name}`;
 };
+
+/**
+ * Update the app seatInfo with the seat obtained from firestore
+ * @param  {object} seatInfo - App seat info
+ * @param  {object} seat - Firebase seat
+ * @returns {object} - updated seat info
+ */
+export const updateSeatInfo = (seatInfo, seat) => {
+  // eslint-disable-next-line no-unused-vars
+  let appSeat = seatInfo[seat.location.name].phases
+    .find(phase => {
+      return phase.id === seat.phase.id;
+    })
+    .cubicles.find(cubicle => {
+      return cubicle.id === seat.cubicle.id;
+    })
+    .seats.find(appSeat => {
+      return appSeat.id === seat.id;
+    });
+
+  appSeat = {
+    ...seat
+  };
+
+  return seatInfo;
+};

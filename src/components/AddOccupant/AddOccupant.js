@@ -5,7 +5,9 @@ import { bindActionCreators } from "redux";
 import "./AddOccupant.scss";
 import * as storeActions from "../../actions/actions";
 import { getSeatPath } from "../../utils/seatInfo.service";
+import * as firestoreService from "../../utils/firestore.service";
 import { getFullNameFromObj } from "../../utils/utils";
+import firebase from "../../firebaseSetup";
 
 class AddOccupant extends React.Component {
   constructor(props) {
@@ -16,6 +18,7 @@ class AddOccupant extends React.Component {
       searchText: "",
       occupantToAdd: null
     };
+    this.firestore = firebase.firestore();
   }
 
   componentDidUpdate(prevProps) {
@@ -32,7 +35,7 @@ class AddOccupant extends React.Component {
       ...occupant
     };
 
-    this.props.actions.updateSeat(seat);
+    firestoreService.updateSeat(seat);
   };
   /**
    * Filters an Object using the filter string by comparing with the user

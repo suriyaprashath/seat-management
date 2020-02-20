@@ -5,13 +5,14 @@ import { bindActionCreators } from "redux";
 import "./SeatView.scss";
 import * as storeActions from "../../actions/actions";
 import { getFullNameFromObj } from "../../utils/utils";
+import * as firestoreService from "../../utils/firestore.service";
 
 class SeatView extends React.Component {
   unlinkOccupant = seat => {
     seat.occupied = false;
     seat.occupant = {};
 
-    this.props.actions.updateSeat(seat);
+    firestoreService.updateSeat(seat);
   };
 
   render() {
