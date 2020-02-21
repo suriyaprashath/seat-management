@@ -116,8 +116,26 @@ class CubicleView extends React.Component {
             </div>
             <div className="cubicle-detail-bdy">
               {Object.keys(this.props.seatData.selectedPhase).length !== 0 &&
-                this.props.seatData.selectedPhase.cubicles.map(
-                  (cubicle, cubicleIndex) => {
+                this.props.seatData.selectedPhase.cubicles
+                  .sort((a, b) => {
+                    /*
+                     Strip the cubicle data from the id and extract the numbers
+                     in it. The array is sorted in ascending order based on the
+                     extracted numbers.
+
+                     Example:
+                      B-3F-C3   =>  C3  =>  3
+                      B-3F-C30  =>  C30 =>  30
+                    */
+                    let aid = parseInt(
+                      a.id.split("-")[2].replace(/[^0-9]/g, "")
+                    );
+                    let bid = parseInt(
+                      b.id.split("-")[2].replace(/[^0-9]/g, "")
+                    );
+                    return aid - bid;
+                  })
+                  .map((cubicle, cubicleIndex) => {
                     return (
                       <div
                         className={`cubicle-detail ${
@@ -195,8 +213,7 @@ class CubicleView extends React.Component {
                         </div>
                       </div>
                     );
-                  }
-                )}
+                  })}
             </div>
           </div>
         </div>
