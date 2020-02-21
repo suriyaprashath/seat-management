@@ -160,7 +160,11 @@ class CubicleView extends React.Component {
                             />
                           </div>
                         </div>
-                        <div className="seat-details-ctr">
+                        <div
+                          className={`seat-details-ctr ${
+                            cubicle.seats.length <= 1 ? "less-seat" : ""
+                          }`}
+                        >
                           {cubicle.seats.map((seat, seatIndex) => {
                             return (
                               <div

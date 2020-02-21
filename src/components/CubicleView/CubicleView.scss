@@ -66,7 +66,9 @@ $visualContainerWidth: 450px;
     .cubicle-detail-bdy {
       height: calc(100% - 46px);
       .cubicle-detail {
+        border-bottom: 1px solid #232d3b;
         display: flex;
+        min-height: 60px;
         .cubicle {
           align-items: flex-start;
           color: #c6d0dc;
@@ -80,7 +82,7 @@ $visualContainerWidth: 450px;
           }
           .view-ctr {
             align-items: center;
-            background-color: #2B3543;
+            background-color: #2b3543;
             border-radius: 3px;
             cursor: pointer;
             display: flex;
@@ -98,9 +100,13 @@ $visualContainerWidth: 450px;
           color: #c6d0dc;
           flex-grow: 1;
           font-size: 12px;
+          &.less-seat {
+            padding: 10px 0px;
+          }
           .seat-detail {
             align-items: center;
             display: flex;
+            flex-grow: 1;
             height: 40px;
             .name {
               align-items: center;
@@ -130,8 +136,8 @@ $visualContainerWidth: 450px;
   }
 
   .right-panel {
-    background-color: #0F1319;
-    box-shadow: -3px 0 20px 10px #08080F;
+    background-color: #0f1319;
+    box-shadow: -3px 0 20px 10px #08080f;
     bottom: 0px;
     position: absolute;
     right: 0px;
