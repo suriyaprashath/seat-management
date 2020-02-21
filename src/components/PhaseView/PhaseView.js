@@ -33,12 +33,48 @@ class PhaseView extends React.Component {
     return (
       <div className="phase-view">
         <div className="details-ctr">
+          <div className="stats-ctr">
+            <div className="total-seat stats">
+              <p className="desc">Total Seats</p>
+              <p className="value">
+                {utils.getTotalSeatsInALocation(
+                  this.props.seatData.seatInfo,
+                  this.props.seatData.selectedLocation
+                )}
+              </p>
+            </div>
+            <div className="occupied-seat stats">
+              <p className="desc">Occupied Seats</p>
+              <p className="value">
+                {utils.getOccupiedSeatsInALocation(
+                  this.props.seatData.seatInfo,
+                  this.props.seatData.selectedLocation
+                )}
+              </p>
+            </div>
+            <div className="available-seat stats">
+              <p className="desc">Available Seats</p>
+              <p className="value">
+                {utils.getAvailableSeatsInALocation(
+                  this.props.seatData.seatInfo,
+                  this.props.seatData.selectedLocation
+                )}
+              </p>
+            </div>
+          </div>
           {this.props.seatData.selectedLocation !== "" &&
             this.props.seatData.seatInfo[
               this.props.seatData.selectedLocation
             ].phases.map(phase => {
               return (
-                <div className="phase-detail-ctr" key={phase.id}>
+                <div
+                  className="phase-detail-ctr"
+                  key={phase.id}
+                  onClick={() => {
+                    this.setSelectedPhase(phase);
+                    this.routeToCubicleView();
+                  }}
+                >
                   <span className="phase-name">{phase.name}</span>
                   <div className="phase-stats-ctr">
                     <div className="phase-stat total-seats">
@@ -58,10 +94,6 @@ class PhaseView extends React.Component {
                     <img
                       src="./assets/images/arrow-right.png"
                       alt="Show Phase Details"
-                      onClick={() => {
-                        this.setSelectedPhase(phase);
-                        this.routeToCubicleView();
-                      }}
                     />
                   </div>
                 </div>
