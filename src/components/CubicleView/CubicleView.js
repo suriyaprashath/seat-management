@@ -137,13 +137,23 @@ class CubicleView extends React.Component {
         <div className="details-ctr">
           <Breadcrumb configList={this.state.breadCrumbConfig}></Breadcrumb>
           <div className="stats-ctr">
-            <div className="total-seat stats">
+            <div className="total-seat stat">
+              <img
+                className="stat-icon"
+                src="/assets/images/total-seats.svg"
+                alt="Total Seats"
+              />
               <p className="desc">Total Seats</p>
               <p className="value">
                 {utils.getTotalSeatsInAPhase(this.props.seatData.selectedPhase)}
               </p>
             </div>
-            <div className="occupied-seat stats">
+            <div className="occupied-seat stat">
+              <img
+                className="stat-icon"
+                src="/assets/images/occupied-seats.svg"
+                alt="Occupied Seats"
+              />
               <p className="desc">Occupied Seats</p>
               <p className="value">
                 {utils.getOccupiedSeatsInAPhase(
@@ -151,7 +161,12 @@ class CubicleView extends React.Component {
                 )}
               </p>
             </div>
-            <div className="available-seat stats">
+            <div className="available-seat stat">
+              <img
+                className="stat-icon"
+                src="/assets/images/available-seats.svg"
+                alt="Available Seats"
+              />
               <p className="desc">Available Seats</p>
               <p className="value">
                 {utils.getAvailableSeatsInAPhase(
@@ -263,11 +278,15 @@ class CubicleView extends React.Component {
                                 </span>
                                 <div className="unlink">
                                   <img
-                                    className="unlink-icon"
+                                    className={`unlink-icon ${
+                                      !seat.occupied ? "disabled" : ""
+                                    }`}
                                     src="./assets/images/unlink.png"
                                     alt="Unlink"
                                     onClick={() => {
-                                      this.unlinkOccupant(seat);
+                                      if (seat.occupied) {
+                                        this.unlinkOccupant(seat);
+                                      }
                                     }}
                                   />
                                 </div>
