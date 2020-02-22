@@ -289,7 +289,11 @@ class ModifyOccupant extends React.Component {
                     }`}
                     key={cubicle.id}
                   >
-                    <div className="select-seat-ctr">
+                    <div
+                      className={`select-seat-ctr ${
+                        cubicle.seats.length <= 1 ? "less-seat" : ""
+                      }`}
+                    >
                       {cubicle.seats.map((seat, seatIndex) => {
                         return (
                           <div
@@ -318,7 +322,11 @@ class ModifyOccupant extends React.Component {
                     <div className="cubicle">
                       <span className="cubicle-name">{cubicle.name}</span>
                     </div>
-                    <div className="seat-details-ctr">
+                    <div
+                      className={`seat-details-ctr ${
+                        cubicle.seats.length <= 1 ? "less-seat" : ""
+                      }`}
+                    >
                       {cubicle.seats.map((seat, seatIndex) => {
                         return (
                           <div
@@ -335,7 +343,11 @@ class ModifyOccupant extends React.Component {
                                   : "-"}
                               </span>
                             </div>
-                            <span className="team"></span>
+                            <span className="team">
+                              {seat.occupant.team && seat.occupant.team !== ""
+                                ? seat.occupant.team
+                                : "-"}
+                            </span>
                           </div>
                         );
                       })}

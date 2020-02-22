@@ -140,8 +140,26 @@ class AddOccupant extends React.Component {
                     </p>
                   </div>
                 ) : (
-                  Object.keys(this.state.filteredPeopleInfo).map(
-                    (peopleId, peopleIndex) => {
+                  Object.keys(this.state.filteredPeopleInfo)
+                    .sort((a, b) => {
+                      let result;
+                      let aName = getFullNameFromObj(
+                        this.state.filteredPeopleInfo[a]
+                      );
+                      let bName = getFullNameFromObj(
+                        this.state.filteredPeopleInfo[b]
+                      );
+                      
+                      if (aName < bName) {
+                        result = -1;
+                      } else if (aName > bName) {
+                        result = 1;
+                      } else {
+                        result = 0;
+                      }
+                      return result;
+                    })
+                    .map((peopleId, peopleIndex) => {
                       let people = this.state.filteredPeopleInfo[peopleId];
                       return (
                         <div
@@ -171,8 +189,7 @@ class AddOccupant extends React.Component {
                           <div className="team">{people.team}</div>
                         </div>
                       );
-                    }
-                  )
+                    })
                 )}
               </div>
             </div>
