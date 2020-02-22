@@ -132,7 +132,9 @@ $visualContainerWidth: 450px;
           flex-grow: 1;
           font-size: 12px;
           &.less-seat {
-            padding: 10px 0px;
+            .seat-detail {
+              height: 100%;
+            }
           }
           .seat-detail {
             align-items: center;
