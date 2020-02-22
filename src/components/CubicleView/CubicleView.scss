@@ -13,6 +13,10 @@ $visualContainerWidth: 450px;
     height: 100%;
     padding-right: 30px;
     width: calc(100% - #{$visualContainerWidth});
+
+    .stats-ctr {
+      margin-bottom: 25px;
+    }
   }
 
   .visual-ctr {
@@ -27,10 +31,34 @@ $visualContainerWidth: 450px;
     width: 450px;
   }
 
+  .stats-ctr {
+    display: flex;
+
+    .stats {
+      background-color: #151a22;
+      border-radius: 1px;
+      box-sizing: border-box;
+      height: 105px;
+      margin-right: 20px;
+      padding: 15px 20px;
+      width: 188px;
+
+      .desc {
+        color: #53657e;
+        font-size: 12px;
+        padding-bottom: 5px;
+      }
+      .value {
+        color: #c6d0dc;
+        font-size: 25px;
+      }
+    }
+  }
+
   .cubicle-detail-ctr {
     background-color: #191f27;
     border-radius: 5px;
-    max-height: calc(100% - 65px);
+    max-height: calc(100% - 195px);
     overflow: auto;
     width: 100%;
     .cubicle {
