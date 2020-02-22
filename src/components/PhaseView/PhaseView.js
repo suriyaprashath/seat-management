@@ -4,16 +4,38 @@ import { bindActionCreators } from "redux";
 import { Redirect } from "react-router";
 
 import "./PhaseView.scss";
+import "../Breadcrumb/Breadcrumb";
 import * as utils from "../../utils/utils";
 import * as storeActions from "../../actions/actions";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
 class PhaseView extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      routeToCubicleView: false
+      routeToCubicleView: false,
+      breadCrumbConfig: [
+        {
+          display: this.props.seatData.selectedLocation
+        }
+      ]
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.seatData.selectedLocation !==
+      this.props.seatData.selectedLocation
+    ) {
+      this.setState({
+        breadCrumbConfig: [
+          {
+            display: this.props.seatData.selectedLocation
+          }
+        ]
+      });
+    }
   }
 
   routeToCubicleView = () => {
@@ -33,6 +55,7 @@ class PhaseView extends React.Component {
     return (
       <div className="phase-view">
         <div className="details-ctr">
+          <Breadcrumb configList={this.state.breadCrumbConfig}></Breadcrumb>
           <div className="stats-ctr">
             <div className="total-seat stats">
               <p className="desc">Total Seats</p>
