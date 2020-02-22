@@ -62,12 +62,12 @@ $scrollWidth: 17px;
       padding-left: 15px;
     }
     .name {
-      min-width: 110px;
-      width: 110px;
+      min-width: 150px;
+      width: 150px;
     }
     .team {
-      min-width: 108px;
-      width: 108px;
+      min-width: 100px;
+      width: 100px;
     }
     .unlink {
       min-width: 50px;
@@ -90,8 +90,15 @@ $scrollWidth: 17px;
     .mo-detail-bdy {
       height: calc(100% - 46px);
       .mo-detail {
+        border-bottom: 1px solid #232d3b;
         display: flex;
+        min-height: 60px;
         .select-seat-ctr {
+          &.less-seat {
+            .select-seat {
+              height: 100%;
+            }
+          }
           .select-seat {
             align-items: center;
             display: flex;
@@ -115,6 +122,11 @@ $scrollWidth: 17px;
           color: #c6d0dc;
           flex-grow: 1;
           font-size: 12px;
+          &.less-seat {
+            .seat-detail {
+              height: 100%;
+            }
+          }
           .seat-detail {
             align-items: center;
             display: flex;
