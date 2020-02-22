@@ -32,7 +32,7 @@ $visualContainerWidth: 450px;
   .stats-ctr {
     display: flex;
 
-    .stats {
+    .stat {
       background-color: #151a22;
       border-radius: 1px;
       box-sizing: border-box;
@@ -41,6 +41,9 @@ $visualContainerWidth: 450px;
       padding: 15px 20px;
       width: 188px;
 
+      .stat-icon {
+        padding-bottom: 10px;
+      }
       .desc {
         color: #53657e;
         font-size: 12px;
