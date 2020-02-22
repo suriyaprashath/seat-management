@@ -89,6 +89,9 @@ $visualContainerWidth: 450px;
             font-size: 10px;
             margin-top: 10px;
             padding: 5px;
+            &.disabled {
+              cursor: no-drop;
+            }
             .view-icon {
               height: 12px;
               padding-left: 10px;

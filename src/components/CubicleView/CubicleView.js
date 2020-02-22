@@ -176,8 +176,9 @@ class CubicleView extends React.Component {
                         <div className="cubicle">
                           <span className="cubicle-name">{cubicle.name}</span>
                           <div
-                            className="view-ctr"
+                            className="view-ctr disabled"
                             onClick={() => {
+                              return;
                               this.setSelectedCubicle(cubicle);
                               this.routeToSeatView();
                             }}
