@@ -12,6 +12,10 @@ $visualContainerWidth: 450px;
     height: 100%;
     padding-right: 30px;
     width: calc(100% - #{$visualContainerWidth});
+
+    .stats-ctr {
+      margin-bottom: 25px;
+    }
   }
 
   .visual-ctr {
@@ -25,12 +29,37 @@ $visualContainerWidth: 450px;
     min-width: 450px;
   }
 
+  .stats-ctr {
+    display: flex;
+
+    .stats {
+      background-color: #151a22;
+      border-radius: 1px;
+      box-sizing: border-box;
+      height: 105px;
+      margin-right: 20px;
+      padding: 15px 20px;
+      width: 188px;
+
+      .desc {
+        color: #53657e;
+        font-size: 12px;
+        padding-bottom: 5px;
+      }
+      .value {
+        color: #c6d0dc;
+        font-size: 25px;
+      }
+    }
+  }
+
   .phase-detail-ctr {
     align-items: center;
     background-color: #151a22;
     border-radius: 1px;
     box-shadow: 0 2px 10px 10px rgba(13, 17, 22, 0.4);
     color: #c6d0dc;
+    cursor: pointer;
     display: flex;
     height: 55px;
     min-width: 600px;

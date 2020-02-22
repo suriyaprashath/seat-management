@@ -104,7 +104,7 @@ class AddOccupant extends React.Component {
             alt="close"
           />
         </div>
-        {Object.keys(this.state.filteredPeopleInfo).length === 0 ? (
+        {Object.keys(this.props.people).length === 0 ? (
           <div className="loading-ctr">
             <p className="loader">Fetching the contents ...</p>
           </div>
@@ -133,36 +133,46 @@ class AddOccupant extends React.Component {
                 <p className="team">Team</p>
               </div>
               <div className="occupant-list-bdy">
-                {Object.keys(this.state.filteredPeopleInfo).map(
-                  (peopleId, peopleIndex) => {
-                    let people = this.state.filteredPeopleInfo[peopleId];
-                    return (
-                      <div
-                        className={`occupant-list ${
-                          peopleIndex % 2 === 0 ? "odd-row" : "even-row"
-                        }`}
-                        key={peopleId}
-                      >
-                        <div className="select-occupant">
-                          <input
-                            className="radio square input"
-                            type="radio"
-                            name="select-seat"
-                            id={`select-${peopleId}`}
-                            onChange={() => {
-                              this.updateOccupantToAdd(people);
-                            }}
-                          />
-                          <label
-                            className="radio square label"
-                            htmlFor={`select-${peopleId}`}
-                          />
+                {this.state.filteredPeopleInfo.length === 0 ? (
+                  <div className="no-result">
+                    <p className="no-result-info">
+                      No matching results found :(
+                    </p>
+                  </div>
+                ) : (
+                  Object.keys(this.state.filteredPeopleInfo).map(
+                    (peopleId, peopleIndex) => {
+                      let people = this.state.filteredPeopleInfo[peopleId];
+                      return (
+                        <div
+                          className={`occupant-list ${
+                            peopleIndex % 2 === 0 ? "odd-row" : "even-row"
+                          }`}
+                          key={peopleId}
+                        >
+                          <div className="select-occupant">
+                            <input
+                              className="radio square input"
+                              type="radio"
+                              name="select-seat"
+                              id={`select-${peopleId}`}
+                              onChange={() => {
+                                this.updateOccupantToAdd(people);
+                              }}
+                            />
+                            <label
+                              className="radio square label"
+                              htmlFor={`select-${peopleId}`}
+                            />
+                          </div>
+                          <div className="name">
+                            {getFullNameFromObj(people)}
+                          </div>
+                          <div className="team">{people.team}</div>
                         </div>
-                        <div className="name">{getFullNameFromObj(people)}</div>
-                        <div className="team">{people.team}</div>
-                      </div>
-                    );
-                  }
+                      );
+                    }
+                  )
                 )}
               </div>
             </div>

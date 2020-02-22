@@ -1,0 +1,32 @@
+.breadcrumb-ctr {
+  height: 40px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  width: 100%;
+
+  &.first-page {
+    align-items: center;
+    display: flex;
+  }
+
+  .breadcrumb-list {
+    margin-bottom: 10px;
+
+    .breadcrumb {
+      color: #b3bfd1;
+      cursor: pointer;
+      font-size: 12px;
+      margin-right: 5px;
+    }
+    .right-arrow {
+      margin-right: 5px;
+    }
+  }
+
+  .current-page {
+    .title {
+      color: #c6d0dc;
+      font-size: 15px;
+    }
+  }
+}

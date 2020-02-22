@@ -1,12 +1,10 @@
-export const getTotalSeatsInAPhase = phase => {
+export const getAvailableSeatsInALocation = (seatInfo, location) => {
   let seatCount = 0;
+  let phases = seatInfo[location] ? seatInfo[location].phases : [];
 
-  if (phase.cubicles) {
-    phase.cubicles.forEach(cubicle => {
-      cubicle.seats &&
-        cubicle.seats.forEach(seat => {
-          seatCount++;
-        });
+  if (Array.isArray(phases) && phases.length !== 0) {
+    phases.forEach(phase => {
+      seatCount += getAvailableSeatsInAPhase(phase);
     });
   }
 
@@ -28,6 +26,64 @@ export const getAvailableSeatsInAPhase = phase => {
   }
 
   return availableSeats;
+};
+
+export const getOccupiedSeatsInALocation = (seatInfo, location) => {
+  let seatCount = 0;
+  let phases = seatInfo[location] ? seatInfo[location].phases : [];
+
+  if (Array.isArray(phases) && phases.length !== 0) {
+    phases.forEach(phase => {
+      seatCount += getOccupiedSeatsInAPhase(phase);
+    });
+  }
+
+  return seatCount;
+};
+
+export const getOccupiedSeatsInAPhase = phase => {
+  let occupiedSeats = 0;
+
+  if (phase.cubicles) {
+    phase.cubicles.forEach(cubicle => {
+      cubicle.seats &&
+        cubicle.seats.forEach(seat => {
+          if (seat.occupied) {
+            occupiedSeats++;
+          }
+        });
+    });
+  }
+
+  return occupiedSeats;
+};
+
+export const getTotalSeatsInALocation = (seatInfo, location) => {
+  let seatCount = 0;
+  let phases = seatInfo[location] ? seatInfo[location].phases : [];
+
+  if (Array.isArray(phases) && phases.length !== 0) {
+    phases.forEach(phase => {
+      seatCount += getTotalSeatsInAPhase(phase);
+    });
+  }
+
+  return seatCount;
+};
+
+export const getTotalSeatsInAPhase = phase => {
+  let seatCount = 0;
+
+  if (phase.cubicles) {
+    phase.cubicles.forEach(cubicle => {
+      cubicle.seats &&
+        cubicle.seats.forEach(seat => {
+          seatCount++;
+        });
+    });
+  }
+
+  return seatCount;
 };
 
 /**

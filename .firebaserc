@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "soliton-internal-management"
+    "staging": "sim-staging-c6948",
+    "production": "soliton-internal-managem-17caf",
+    "default": "sim-staging-c6948"
   }
 }

@@ -8,7 +8,7 @@ import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import PhaseView from "./components/PhaseView/PhaseView";
 import CubicleView from "./components/CubicleView/CubicleView";
-import SeatView from "./components/SeatView/SeatView";
+// import SeatView from "./components/SeatView/SeatView";
 import * as actions from "./actions/actions";
 import firebase from "./firebaseSetup";
 import { transformDataForApp } from "./utils/firestore.service";
@@ -16,6 +16,7 @@ import { updateSeatInfo } from "./utils/seatInfo.service";
 
 export class App extends React.Component {
   constructor(props) {
+    console.log("Environment:", process.env.REACT_APP_ENV);
     super(props);
 
     let firestore = firebase.firestore();
@@ -73,7 +74,7 @@ export class App extends React.Component {
                 <Route exact path="/" component={PhaseView} />
                 <Route path="/phaseview" component={PhaseView} />
                 <Route path="/cubicleview" component={CubicleView} />
-                <Route path="/seatview" component={SeatView} />
+                {/* <Route path="/seatview" component={SeatView} /> */}
               </Switch>
             </div>
           </div>

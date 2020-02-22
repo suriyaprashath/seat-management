@@ -8,6 +8,7 @@ import "./CubicleView.scss";
 import * as storeActions from "../../actions/actions";
 import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
 import AddOccupant from "../AddOccupant/AddOccupant";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { getFullNameFromObj } from "../../utils/utils";
 import * as firestoreService from "../../utils/firestore.service";
 
@@ -25,12 +26,40 @@ class CubicleView extends React.Component {
     super(props);
 
     this.state = {
+      breadCrumbConfig: [
+        {
+          display: this.props.seatData.selectedLocation,
+          url: "/phaseview"
+        },
+        {
+          display: this.props.seatData.selectedPhase.name
+        }
+      ],
       doAddOccupant: false, // Right panel
       doEditOccupant: false, // Right panel
       routeToSeatView: false,
       seatToEdit: null,
       showRightPanel: false
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.seatData.selectedLocation !==
+      this.props.seatData.selectedLocation
+    ) {
+      this.setState({
+        breadCrumbConfig: [
+          {
+            display: this.props.seatData.selectedLocation,
+            url: "/phaseview"
+          },
+          {
+            display: this.props.seatData.selectedPhase.name
+          }
+        ]
+      });
+    }
   }
 
   addOccupant = seat => {
@@ -106,6 +135,7 @@ class CubicleView extends React.Component {
         </div>
 
         <div className="details-ctr">
+          <Breadcrumb configList={this.state.breadCrumbConfig}></Breadcrumb>
           <div className="cubicle-detail-ctr">
             <div className="tbl-hdr cubicle-detail-hdr">
               <span className="cubicle">Cubicle</span>
@@ -116,8 +146,26 @@ class CubicleView extends React.Component {
             </div>
             <div className="cubicle-detail-bdy">
               {Object.keys(this.props.seatData.selectedPhase).length !== 0 &&
-                this.props.seatData.selectedPhase.cubicles.map(
-                  (cubicle, cubicleIndex) => {
+                this.props.seatData.selectedPhase.cubicles
+                  .sort((a, b) => {
+                    /*
+                     Strip the cubicle data from the id and extract the numbers
+                     in it. The array is sorted in ascending order based on the
+                     extracted numbers.
+
+                     Example:
+                      B-3F-C3   =>  C3  =>  3
+                      B-3F-C30  =>  C30 =>  30
+                    */
+                    let aid = parseInt(
+                      a.id.split("-")[2].replace(/[^0-9]/g, "")
+                    );
+                    let bid = parseInt(
+                      b.id.split("-")[2].replace(/[^0-9]/g, "")
+                    );
+                    return aid - bid;
+                  })
+                  .map((cubicle, cubicleIndex) => {
                     return (
                       <div
                         className={`cubicle-detail ${
@@ -128,8 +176,9 @@ class CubicleView extends React.Component {
                         <div className="cubicle">
                           <span className="cubicle-name">{cubicle.name}</span>
                           <div
-                            className="view-ctr"
+                            className="view-ctr disabled"
                             onClick={() => {
+                              return;
                               this.setSelectedCubicle(cubicle);
                               this.routeToSeatView();
                             }}
@@ -142,7 +191,11 @@ class CubicleView extends React.Component {
                             />
                           </div>
                         </div>
-                        <div className="seat-details-ctr">
+                        <div
+                          className={`seat-details-ctr ${
+                            cubicle.seats.length <= 1 ? "less-seat" : ""
+                          }`}
+                        >
                           {cubicle.seats.map((seat, seatIndex) => {
                             return (
                               <div
@@ -195,8 +248,7 @@ class CubicleView extends React.Component {
                         </div>
                       </div>
                     );
-                  }
-                )}
+                  })}
             </div>
           </div>
         </div>
