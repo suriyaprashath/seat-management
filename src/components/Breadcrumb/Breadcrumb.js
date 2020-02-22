@@ -31,7 +31,7 @@ export default class Breadcrumb extends React.Component {
         <div className="breadcrumb-list">
           {this.props.configList.map((config, configIndex, configList) => {
             return (
-              <React.Fragment key={config.url || config.display}>
+              <React.Fragment key={config.url || config.display || configIndex}>
                 {configIndex < configList.length - 1 && (
                   <>
                     <p
