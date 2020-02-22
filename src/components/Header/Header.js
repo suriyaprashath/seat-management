@@ -49,7 +49,7 @@ class Header extends React.Component {
               <div
                 className={`location ${
                   this.state.location === location ? "active" : ""
-                }`}
+                } ${location.toLowerCase()}`}
                 key={location}
                 onClick={() => {
                   this.updateLocation(location);
