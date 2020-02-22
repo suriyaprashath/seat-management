@@ -210,7 +210,7 @@ class CubicleView extends React.Component {
                             View
                             <img
                               className="view-icon"
-                              src="./assets/images/pencil.png"
+                              src="./assets/images/view-right.svg"
                               alt="Go"
                             />
                           </div>
