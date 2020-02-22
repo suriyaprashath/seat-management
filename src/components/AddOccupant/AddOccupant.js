@@ -102,6 +102,7 @@ class AddOccupant extends React.Component {
             className="close-panel-icon"
             src="/assets/images/close-dark.svg"
             alt="close"
+            onClick={this.props.closeAdd}
           />
         </div>
         {Object.keys(this.props.people).length === 0 ? (
@@ -149,7 +150,7 @@ class AddOccupant extends React.Component {
                       let bName = getFullNameFromObj(
                         this.state.filteredPeopleInfo[b]
                       );
-                      
+
                       if (aName < bName) {
                         result = -1;
                       } else if (aName > bName) {
@@ -196,9 +197,6 @@ class AddOccupant extends React.Component {
           </>
         )}
         <div className="actions-ctr">
-          <button className="btn danger" onClick={this.props.closeAdd}>
-            Cancel
-          </button>
           <button
             className="btn success"
             onClick={() => {
