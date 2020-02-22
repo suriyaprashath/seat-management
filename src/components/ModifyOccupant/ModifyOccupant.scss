@@ -15,10 +15,18 @@ $scrollWidth: 17px;
     height: 50px;
     justify-content: center;
     padding-bottom: 30px;
+    position: relative;
 
     .occupant-name {
       color: #b3bfd1;
       font-size: 16px;
+    }
+    .close-panel-icon {
+      cursor: pointer;
+      height: 15px;
+      position: absolute;
+      right: 0px;
+      width: 15px;
     }
   }
 

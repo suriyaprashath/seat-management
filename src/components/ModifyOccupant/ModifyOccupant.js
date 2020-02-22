@@ -198,6 +198,12 @@ class ModifyOccupant extends React.Component {
           <span className="occupant-name">
             {getFullNameFromObj(this.props.seatToEdit.occupant)}
           </span>
+          <img
+            className="close-panel-icon"
+            src="/assets/images/close-dark.svg"
+            alt="close"
+            onClick={this.props.cancelEdit}
+          />
         </div>
         <div className="modify-options-ctr">
           <div className="move-to">
@@ -359,9 +365,6 @@ class ModifyOccupant extends React.Component {
           </div>
         </div>
         <div className="actions-ctr">
-          <button className="btn danger" onClick={this.props.cancelEdit}>
-            Cancel
-          </button>
           <button
             className="btn success"
             onClick={() => {
