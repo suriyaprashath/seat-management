@@ -8,6 +8,7 @@ import "./CubicleView.scss";
 import * as storeActions from "../../actions/actions";
 import ModifyOccupant from "../ModifyOccupant/ModifyOccupant";
 import AddOccupant from "../AddOccupant/AddOccupant";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { getFullNameFromObj } from "../../utils/utils";
 import * as firestoreService from "../../utils/firestore.service";
 
@@ -25,12 +26,40 @@ class CubicleView extends React.Component {
     super(props);
 
     this.state = {
+      breadCrumbConfig: [
+        {
+          display: this.props.seatData.selectedLocation,
+          url: "/phaseview"
+        },
+        {
+          display: this.props.seatData.selectedPhase.name
+        }
+      ],
       doAddOccupant: false, // Right panel
       doEditOccupant: false, // Right panel
       routeToSeatView: false,
       seatToEdit: null,
       showRightPanel: false
     };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (
+      prevProps.seatData.selectedLocation !==
+      this.props.seatData.selectedLocation
+    ) {
+      this.setState({
+        breadCrumbConfig: [
+          {
+            display: this.props.seatData.selectedLocation,
+            url: "/phaseview"
+          },
+          {
+            display: this.props.seatData.selectedPhase.name
+          }
+        ]
+      });
+    }
   }
 
   addOccupant = seat => {
@@ -106,6 +135,7 @@ class CubicleView extends React.Component {
         </div>
 
         <div className="details-ctr">
+          <Breadcrumb configList={this.state.breadCrumbConfig}></Breadcrumb>
           <div className="cubicle-detail-ctr">
             <div className="tbl-hdr cubicle-detail-hdr">
               <span className="cubicle">Cubicle</span>

@@ -30,7 +30,7 @@ $visualContainerWidth: 450px;
   .cubicle-detail-ctr {
     background-color: #191f27;
     border-radius: 5px;
-    max-height: 100%;
+    max-height: calc(100% - 65px);
     overflow: auto;
     width: 100%;
     .cubicle {
