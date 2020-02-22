@@ -16,7 +16,7 @@ import { updateSeatInfo } from "./utils/seatInfo.service";
 
 export class App extends React.Component {
   constructor(props) {
-    console.log("Environment:", process.env.NODE_ENV);
+    console.log("Environment:", process.env.REACT_APP_ENV);
     super(props);
 
     let firestore = firebase.firestore();
