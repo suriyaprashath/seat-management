@@ -41,6 +41,19 @@ $scrollWidth: 17px;
     }
   }
 
+  .unlink-txt {
+    align-items: center;
+    height: calc(100% - 296px);
+    justify-content: center;
+    display: flex;
+
+    .unlink-info {
+      font-size: 14px;
+      color: #c6d0dc;
+      font-family: Montserrat-Bold;
+    }
+  }
+
   .hierarchy-ctr {
     display: flex;
     margin-bottom: 10px;

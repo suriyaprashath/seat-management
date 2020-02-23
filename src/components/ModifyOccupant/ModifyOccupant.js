@@ -246,124 +246,136 @@ class ModifyOccupant extends React.Component {
             <label className="radio circle value">Unlink</label>
           </div>
         </div>
-        <div className="hierarchy-ctr">
-          <select
-            className="select location-select"
-            value={this.state.modifyOccupant.selectedLocation}
-            onChange={this.onTargetLocationChange}
-          >
-            {Object.keys(this.props.seatData.seatInfo).map(location => {
-              return (
-                <option value={location} key={location}>
-                  {location}
-                </option>
-              );
-            })}
-          </select>
+        {this.state.modifyOption !== "unlink" ? (
+          <>
+            <div className="hierarchy-ctr">
+              <select
+                className="select location-select"
+                value={this.state.modifyOccupant.selectedLocation}
+                onChange={this.onTargetLocationChange}
+              >
+                {Object.keys(this.props.seatData.seatInfo).map(location => {
+                  return (
+                    <option value={location} key={location}>
+                      {location}
+                    </option>
+                  );
+                })}
+              </select>
 
-          <select
-            className="select phase-select"
-            value={this.state.modifyOccupant.selectedPhase.id}
-            onChange={this.onTargetPhaseChange}
-          >
-            {this.props.seatData.seatInfo[
-              this.state.modifyOccupant.selectedLocation
-            ].phases.map(phase => {
-              return (
-                <option value={phase.id} key={phase.id}>
-                  {phase.name}
-                </option>
-              );
-            })}
-          </select>
-        </div>
-        <div className="mo-detail-ctr">
-          <div className="tbl-hdr mo-detail-hdr">
-            <p className="select-seat"></p>
-            <p className="cubicle">Cubicle</p>
-            <p className="seat">Seat</p>
-            <p className="name">Name</p>
-            <p className="team">Team</p>
+              <select
+                className="select phase-select"
+                value={this.state.modifyOccupant.selectedPhase.id}
+                onChange={this.onTargetPhaseChange}
+              >
+                {this.props.seatData.seatInfo[
+                  this.state.modifyOccupant.selectedLocation
+                ].phases.map(phase => {
+                  return (
+                    <option value={phase.id} key={phase.id}>
+                      {phase.name}
+                    </option>
+                  );
+                })}
+              </select>
+            </div>
+            <div className="mo-detail-ctr">
+              <div className="tbl-hdr mo-detail-hdr">
+                <p className="select-seat"></p>
+                <p className="cubicle">Cubicle</p>
+                <p className="seat">Seat</p>
+                <p className="name">Name</p>
+                <p className="team">Team</p>
+              </div>
+              <div className="mo-detail-bdy">
+                {this.state.modifyOccupant.selectedPhase.cubicles.map(
+                  (cubicle, cubicleIndex) => {
+                    return (
+                      <div
+                        className={`mo-detail ${
+                          cubicleIndex % 2 === 0 ? "odd-row" : "even-row"
+                        }`}
+                        key={cubicle.id}
+                      >
+                        <div
+                          className={`select-seat-ctr ${
+                            cubicle.seats.length <= 1 ? "less-seat" : ""
+                          }`}
+                        >
+                          {cubicle.seats.map((seat, seatIndex) => {
+                            return (
+                              <div
+                                className={`select-seat ${
+                                  seatIndex % 2 === 0 ? "odd-row" : "even-row"
+                                }`}
+                                key={seat.id}
+                              >
+                                <input
+                                  className="radio square input"
+                                  type="radio"
+                                  name="select-seat"
+                                  id={`select-${seat.id}`}
+                                  onChange={() => {
+                                    this.updateTargetSeatToModify(seat);
+                                  }}
+                                />
+                                <label
+                                  className="radio square label"
+                                  htmlFor={`select-${seat.id}`}
+                                />
+                              </div>
+                            );
+                          })}
+                        </div>
+                        <div className="cubicle">
+                          <span className="cubicle-name">{cubicle.name}</span>
+                        </div>
+                        <div
+                          className={`seat-details-ctr ${
+                            cubicle.seats.length <= 1 ? "less-seat" : ""
+                          }`}
+                        >
+                          {cubicle.seats.map((seat, seatIndex) => {
+                            return (
+                              <div
+                                className={`seat-detail ${
+                                  seatIndex % 2 === 0 ? "odd-row" : "even-row"
+                                }`}
+                                key={seat.id}
+                              >
+                                <span className="seat">{seat.name}</span>
+                                <div className="name">
+                                  <span>
+                                    {seat.occupant && seat.occupant.firstName
+                                      ? getFullNameFromObj(seat.occupant)
+                                      : "-"}
+                                  </span>
+                                </div>
+                                <span className="team">
+                                  {seat.occupant.team &&
+                                  seat.occupant.team !== ""
+                                    ? seat.occupant.team
+                                    : "-"}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="unlink-txt">
+            <p className="unlink-info">
+              Click Confirm to unlink the occupant from the selected seat
+            </p>
           </div>
-          <div className="mo-detail-bdy">
-            {this.state.modifyOccupant.selectedPhase.cubicles.map(
-              (cubicle, cubicleIndex) => {
-                return (
-                  <div
-                    className={`mo-detail ${
-                      cubicleIndex % 2 === 0 ? "odd-row" : "even-row"
-                    }`}
-                    key={cubicle.id}
-                  >
-                    <div
-                      className={`select-seat-ctr ${
-                        cubicle.seats.length <= 1 ? "less-seat" : ""
-                      }`}
-                    >
-                      {cubicle.seats.map((seat, seatIndex) => {
-                        return (
-                          <div
-                            className={`select-seat ${
-                              seatIndex % 2 === 0 ? "odd-row" : "even-row"
-                            }`}
-                            key={seat.id}
-                          >
-                            <input
-                              className="radio square input"
-                              type="radio"
-                              name="select-seat"
-                              id={`select-${seat.id}`}
-                              onChange={() => {
-                                this.updateTargetSeatToModify(seat);
-                              }}
-                            />
-                            <label
-                              className="radio square label"
-                              htmlFor={`select-${seat.id}`}
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-                    <div className="cubicle">
-                      <span className="cubicle-name">{cubicle.name}</span>
-                    </div>
-                    <div
-                      className={`seat-details-ctr ${
-                        cubicle.seats.length <= 1 ? "less-seat" : ""
-                      }`}
-                    >
-                      {cubicle.seats.map((seat, seatIndex) => {
-                        return (
-                          <div
-                            className={`seat-detail ${
-                              seatIndex % 2 === 0 ? "odd-row" : "even-row"
-                            }`}
-                            key={seat.id}
-                          >
-                            <span className="seat">{seat.name}</span>
-                            <div className="name">
-                              <span>
-                                {seat.occupant && seat.occupant.firstName
-                                  ? getFullNameFromObj(seat.occupant)
-                                  : "-"}
-                              </span>
-                            </div>
-                            <span className="team">
-                              {seat.occupant.team && seat.occupant.team !== ""
-                                ? seat.occupant.team
-                                : "-"}
-                            </span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                );
-              }
-            )}
-          </div>
-        </div>
+        )}
+
         <div className="actions-ctr">
           <button
             className="btn success"
