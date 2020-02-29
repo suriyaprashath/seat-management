@@ -138,7 +138,20 @@ class PhaseView extends React.Component {
               );
             })}
         </div>
-        <div className="visual-ctr"></div>
+        <div className="visual-ctr">
+          <div className="map-ctr">
+            <img
+              className="map"
+              alt="Map"
+              src={`/assets/images/${this.props.seatData.seatInfo[
+                this.props.seatData.selectedLocation
+              ] &&
+                this.props.seatData.seatInfo[
+                  this.props.seatData.selectedLocation
+                ].id}-map.svg`}
+            />
+          </div>
+        </div>
       </div>
     );
   }
