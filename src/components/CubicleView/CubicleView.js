@@ -300,7 +300,15 @@ class CubicleView extends React.Component {
             </div>
           </div>
         </div>
-        <div className="visual-ctr"></div>
+        <div className="visual-ctr">
+          <div className="map-ctr">
+            <img
+              className="map"
+              alt="Map"
+              src={`/assets/images/${this.props.seatData.selectedPhase.id}-map.svg`}
+            />
+          </div>
+        </div>
       </div>
     );
   }

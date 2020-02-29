@@ -29,6 +29,20 @@ $visualContainerWidth: 450px;
     height: 100%;
     overflow: auto;
     width: 450px;
+    .map-ctr {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      width: 100%;
+      .map {
+        height: auto;
+        max-height: 100%;
+        max-width: 100%;
+        min-height: 300px;
+        width: auto;
+      }
+    }
   }
 
   .stats-ctr {
