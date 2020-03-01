@@ -301,11 +301,16 @@ class CubicleView extends React.Component {
           </div>
         </div>
         <div className="visual-ctr">
+          <div className="map-header">
+            <h1 className="map-name">
+              {`${this.props.seatData.selectedLocation}-${this.props.seatData.selectedPhase.name}`}
+            </h1>
+          </div>
           <div className="map-ctr">
             <img
               className="map"
               alt="Map"
-              src={`/assets/images/${this.props.seatData.selectedPhase.id}-map.svg`}
+              src={`/assets/images/${this.props.seatData.selectedPhase.id}-map.png`}
             />
           </div>
         </div>
