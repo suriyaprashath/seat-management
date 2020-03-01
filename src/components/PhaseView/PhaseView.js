@@ -6,6 +6,7 @@ import { Redirect } from "react-router";
 import "./PhaseView.scss";
 import "../Breadcrumb/Breadcrumb";
 import * as utils from "../../utils/utils";
+import * as seatInfoService from "../../utils/seatInfo.service";
 import * as storeActions from "../../actions/actions";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 
@@ -139,6 +140,11 @@ class PhaseView extends React.Component {
             })}
         </div>
         <div className="visual-ctr">
+          <div className="map-header">
+            <h1 className="map-name">
+              {`${this.props.seatData.selectedLocation}`}
+            </h1>
+          </div>
           <div className="map-ctr">
             <img
               className="map"
@@ -148,7 +154,7 @@ class PhaseView extends React.Component {
               ] &&
                 this.props.seatData.seatInfo[
                   this.props.seatData.selectedLocation
-                ].id}-map.svg`}
+                ].id}-map.png`}
             />
           </div>
         </div>
