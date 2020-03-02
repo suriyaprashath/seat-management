@@ -1,0 +1,114 @@
+// Radio Button
+.radio {
+  &.square {
+    &.input {
+      display: none;
+    }
+    &.label {
+      background-color: #0d1116;
+      border: 1px solid rgba(179, 191, 209, 0.25);
+      border-radius: 1px;
+      cursor: pointer;
+      display: inline-block;
+      height: 13px;
+      position: relative;
+      width: 13px;
+    }
+    &.input:checked {
+      & + .radio.square.label {
+        border: 1px solid #73bbd4;
+        &:after {
+          background-color: #73bbd4;
+          border-radius: 1px;
+          content: "";
+          display: block;
+          position: absolute;
+          height: 9px;
+          left: 2px;
+          top: 2px;
+          width: 9px;
+        }
+      }
+    }
+  }
+
+  &.circle {
+    &.input {
+      display: none;
+    }
+    &.label {
+      background-color: rgba(247, 247, 247, 0.14);
+      border: 2px solid #b3bfd1;
+      border-radius: 50%;
+      box-sizing: border-box;
+      cursor: pointer;
+      display: inline-block;
+      height: 16px;
+      position: relative;
+      width: 16px;
+    }
+    &.input:checked {
+      & + .radio.circle.label {
+        background-color: #ffffff;
+        border: 4px solid #329b46;
+        border-radius: 50%;
+      }
+    }
+    &.value {
+      color: #c6d0dc;
+      font-size: 12px;
+      font-weight: 500;
+      padding-left: 10px;
+    }
+  }
+}
+
+// Button
+.btn {
+  border: 0px;
+  border-radius: 2.5px;
+  box-shadow: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  height: 36px;
+  min-width: 100px;
+  outline: none;
+  padding: 5px 10px;
+  &:disabled {
+    background-color: #ccc !important;
+    cursor: no-drop;
+  }
+  &.danger {
+    background-color: #c36262;
+  }
+  &.success {
+    background-color: #73bbd4;
+  }
+}
+
+// Dropdown
+.select {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 1px solid #2B3543;
+  color: #C6D0DC;
+  cursor: pointer;
+  font-size: 12px;
+  height:25px;
+  outline: none;
+}
+
+// Text Box
+.text-box {
+  border: 0px;
+  height: 30px;
+  width: 100%;
+  &.dark {
+    border-bottom: 1px solid #2B3543;
+    background-color: transparent;
+    color: #C6D0DC;
+    outline: none;
+  }
+}

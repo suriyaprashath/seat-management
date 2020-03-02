@@ -1,0 +1,63 @@
+$companyLogoWidth: 200px;
+$headerHeight: 100px;
+
+.header {
+  align-items: center;
+  display: flex;
+  height: $headerHeight;
+
+  .brand {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: $headerHeight;
+    width: $companyLogoWidth;
+
+    .brand-logo {
+      height: auto;
+      width: 100px;
+    }
+  }
+
+  .route-header {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 0px 20px;
+  }
+
+  .location-ctr {
+    align-items: center;
+    display: flex;
+    .location {
+      align-items: center;
+      background-position: right center;
+      background-repeat: no-repeat;
+      border: 1px solid #2B3543;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #2B3543;
+      cursor: pointer;
+      display: flex;
+      font-size: 12px;
+      font-weight: bold;
+      height: 45px;
+      justify-content: flex-start;
+      padding-left: 20px;
+      width: 180px;
+      &.active {
+        border: 1px solid #73BBD4;
+        color: #73BBD4;
+      }
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      &.coimbatore {
+        background-image: url('/assets/images/cbe.svg');
+      }
+      &.bangalore {
+        background-image: url('/assets/images/blr.svg');
+      }
+    }
+  }
+}

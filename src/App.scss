@@ -1,0 +1,16 @@
+.page-body {
+  height: calc(100% - 100px);
+
+  .sidebar-ctr {
+    float: left;
+    height: 100%;
+    overflow: auto;
+    width: 200px;
+  }
+  
+  .route-content {
+    float: left;
+    height: 100%;
+    width: calc(100% - 200px);
+  }
+}

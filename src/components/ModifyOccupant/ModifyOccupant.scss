@@ -1,0 +1,195 @@
+$scrollWidth: 17px;
+
+.modify-occupant {
+  background-color: #0f1319;
+  border-radius: 8px;
+  box-sizing: border-box;
+  height: 100%;
+  padding: 25px;
+  position: relative;
+
+  .occupant-info-ctr {
+    align-items: center;
+    border-bottom: 1px solid #2b3543;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    padding-bottom: 30px;
+    position: relative;
+
+    .occupant-name {
+      color: #b3bfd1;
+      font-size: 16px;
+    }
+    .close-panel-icon {
+      cursor: pointer;
+      height: 15px;
+      position: absolute;
+      right: 0px;
+      width: 15px;
+    }
+  }
+
+  .modify-options-ctr {
+    align-items: center;
+    display: flex;
+    padding: 30px 0px;
+    & > * {
+      align-items: center;
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+
+  .unlink-txt {
+    align-items: center;
+    height: calc(100% - 296px);
+    justify-content: center;
+    display: flex;
+
+    .unlink-info {
+      font-size: 14px;
+      color: #c6d0dc;
+      font-family: Montserrat-Bold;
+    }
+  }
+
+  .hierarchy-ctr {
+    display: flex;
+    margin-bottom: 10px;
+    & > *:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  .mo-detail-ctr {
+    background-color: #191f27;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: calc(100% - 261px);
+    overflow: auto;
+    width: calc(100% + #{$scrollWidth});
+    .select-seat {
+      min-width: 40px;
+      width: 40px;
+    }
+    .cubicle {
+      min-width: 60px;
+      width: 60px;
+    }
+    .seat {
+      min-width: 50px;
+      width: 50px;
+      padding-left: 15px;
+    }
+    .name {
+      min-width: 150px;
+      width: 150px;
+    }
+    .team {
+      min-width: 100px;
+      width: 100px;
+    }
+    .unlink {
+      min-width: 50px;
+      width: 50px;
+    }
+    .even-row {
+      background-color: #151a22;
+    }
+    .odd-row {
+      background-color: #191f27;
+    }
+    .mo-detail-hdr {
+      box-shadow: 0 2px 0 0 #232d3b;
+      color: #ffffff;
+      display: flex;
+      font-size: 12px;
+      padding: 15px;
+      position: relative;
+    }
+    .mo-detail-bdy {
+      height: calc(100% - 46px);
+      .mo-detail {
+        border-bottom: 1px solid #232d3b;
+        display: flex;
+        min-height: 60px;
+        .select-seat-ctr {
+          &.less-seat {
+            .select-seat {
+              height: 100%;
+            }
+          }
+          .select-seat {
+            align-items: center;
+            display: flex;
+            height: 40px;
+            justify-content: center;
+          }
+        }
+        .cubicle {
+          align-items: flex-start;
+          color: #c6d0dc;
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          justify-content: center;
+          padding-left: 15px;
+          .cubicle-name {
+            padding-left: 5px;
+          }
+        }
+        .seat-details-ctr {
+          color: #c6d0dc;
+          flex-grow: 1;
+          font-size: 12px;
+          &.less-seat {
+            .seat-detail {
+              height: 100%;
+            }
+          }
+          .seat-detail {
+            align-items: center;
+            display: flex;
+            height: 40px;
+            .name {
+              align-items: center;
+              box-sizing: border-box;
+              display: flex;
+              justify-content: space-between;
+              padding-right: 15px;
+              .edit-occupant {
+                cursor: pointer;
+                height: 16px;
+                width: 16px;
+              }
+            }
+            .unlink {
+              align-items: center;
+              display: flex;
+              .unlink-icon {
+                cursor: pointer;
+                height: 16px;
+                width: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .actions-ctr {
+    align-items: center;
+    bottom: 0px;
+    display: flex;
+    height: 70px;
+    justify-content: center;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    .btn.danger {
+      margin-right: 20px;
+    }
+  }
+}
